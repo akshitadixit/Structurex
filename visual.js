@@ -24,10 +24,25 @@ function genArray() {
         }
 }
 
-function loader() {
+function loader(ch) {
     genArray();
-    bubbleSort();
+    //bubbleSort();
     //insertionSort();
+    switch(ch)
+    {
+        case 1: bubbleSort();
+                        break;
+        case 2: insertionSort();
+                        break;
+        case 3: selectionSort();
+                        break;
+        case 4: Merge();
+                        break;
+        case 5: Quick();
+                        break;
+        case 6: Heap();
+                        break;
+    }
 }
 
 
