@@ -11,10 +11,10 @@
 * Insertion Sort
 * Quick Sort
 * Heap Sort
-
-##### To-do/In-progress:
 * Linear search
 * Binary Search
+
+##### To-do/In-progress:
 * BST - search, traversals, creation
 * A* path finding
 * Djikstra's
