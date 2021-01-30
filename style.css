@@ -49,9 +49,3 @@ button {
   background-color: #4CAF50;
   color: white;
 }
-
-@media only screen and (max-width: 600px) {
-  #array-container {
-    margin: 0% auto;
-  }
-}
