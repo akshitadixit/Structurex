@@ -9,39 +9,36 @@ cont.style ="flex-direction:row";
 window.onload = genArray();
     
 function change(d, h, c) {
-    setTimeout(function () { d.style = ` margin:0% 0.1%;  width:10px; height:${h}px; background-color:${c};`; }, delay1 += delay2);
+    setTimeout(function () { d.style = ` margin:0% 0.2%;  width: 20px; height:${h}px; background-color:${c};`; }, delay1 += delay2);
 }
 
 function genArray() {
-        cont.innerHTML = "";
-    
-        for(var i=0;i<N;i++)
-        {
-            ARR[i] = Math.floor((Math.random() * 100) + 1);
-            divs[i] = document.createElement("div");
-            cont.appendChild(divs[i]);
-            divs[i].style = ` margin:0% 0.1%;  width:10px; height:${ARR[i]}px; background-color: #40E0D0;`;
-        }
+    cont.innerHTML = "";
+
+    for(var i=0; i<N; i++) {
+        ARR[i] = Math.floor((Math.random() * 100) + 1);
+        divs[i] = document.createElement("div");
+        cont.appendChild(divs[i]);
+        divs[i].style = ` margin:0% 0.2%;  width:20px; height:${ARR[i]}px; background-color: #40E0D0;`;
+    }
 }
 
-function loader(ch) {
+function sort(ch) {
     genArray();
-    //bubbleSort();
-    //insertionSort();
-    switch(ch)
-    {
+
+    switch(ch) {
         case 1: bubbleSort();
-                        break;
+            break;
         case 2: insertionSort();
-                        break;
+            break;
         case 3: selectionSort();
-                        break;
+            break;
         case 4: Merge();
-                        break;
+            break;
         case 5: Quick();
-                        break;
+            break;
         case 6: Heap();
-                        break;
+            break;
     }
 }
 

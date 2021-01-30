@@ -1,10 +1,10 @@
-var ARR = [0,12,34,45,52,62,81,111,128,167,265,434,521,529,536];
+var ARR = [0,12,34,45,52,62,81,111,167,265,521,529,536];
 var divs = [];
-var N = 15;
+var N = 12;
 var delay1 = 0; //milliseconds
 var delay2 = 500; 
 var cont = document.getElementById("array_container");
-cont.style ="flex-direction";
+cont.style = "flex-direction";
 window.onload = genArray();
     
 function change(d, h, c) {
@@ -13,30 +13,24 @@ function change(d, h, c) {
 }
 
 function genArray() {
-        cont.innerHTML = "";
-        for(var i=0;i<N;i++)
-        {
-            divs[i] = document.createElement("div");
-            cont.appendChild(divs[i]);
-            divs[i].style = ` margin:0% 0.1%;  width:40px; height:${40}px; background-color: #40E0D0;`;
-            divs[i].textContent=ARR[i];
-            divs[i].style.paddingLeft="20px";
-            divs[i].style.paddingTop="20px";
-           
-        }
-      
+    cont.innerHTML = "";
+    for(var i=0;i<N;i++) {
+        divs[i] = document.createElement("div");
+        cont.appendChild(divs[i]);
+        divs[i].style = ` margin: 0 0.2%; padding: 20px 0px 0px 0px;  width:60px; height:${40}px; background-color: #40E0D0; text-size:5%; text-align: center;`;
+        divs[i].textContent=ARR[i];
+    }
 }
-function loader(ch) {
+function search(ch) {
     genArray();
     //bubbleSort();
     //insertionSort();
-    var x;
-    switch(ch)
-    {
+    // var x;
+    switch(ch) {
         case 1: linearsearch();
-                        break;
+            break;
         case 2: binarysearch();
-                        break;                
+            break;                
     }
 }
 
