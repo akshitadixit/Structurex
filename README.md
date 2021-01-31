@@ -1,6 +1,6 @@
 # Structurex
 
-![img](src/assets/logo.png)
+![img](src/Assets/logo.png)
 
 ### Javascript based Data Structure and Algorithm Visualizer
 
