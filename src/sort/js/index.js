@@ -9,7 +9,9 @@ cont.style ="flex-direction:row";
 window.onload = genArray();
     
 function change(d, h, c) {
-    setTimeout(function () { d.style = ` margin:0% 0.2%;  width: 20px; height:${h}px; background-color:${c};`; }, delay1 += delay2);
+    setTimeout(function () { 
+        d.style = ` margin:0% 0.2%;  width: 20px; height:${h}px; background-color:${c};`;
+    }, delay1 += delay2);
 }
 
 function genArray() {
@@ -25,7 +27,7 @@ function genArray() {
 
 function sort(ch) {
     genArray();
-
+    delay1 = 0;
     switch(ch) {
         case 1: bubbleSort();
             break;
