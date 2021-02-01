@@ -7,18 +7,18 @@ var cont = document.getElementById("array_container");
 cont.style = "flex-direction";
 window.onload = genArray();
     
-function change(d, h, c, delay) {
+function change(d, h, c) {
     setTimeout(function () {
         d.style.backgroundColor = c;
-    }, delay1 += delay);
+    }, delay1 += delay2);
 }
 
 function genArray() {
     cont.innerHTML = "";
-    for(var i=0;i<N;i++) {
+    for(var i=0; i<N; i++) {
         divs[i] = document.createElement("div");
         cont.appendChild(divs[i]);
-        divs[i].style = ` margin: 0 0.2%; padding: 20px 0px 0px 0px;  width:40px; height:${40}px; background-color: #40E0D0; text-size:5%; text-align: center;`;
+        divs[i].style = ` margin: 0 0.2%; padding: 20px 0px 0px 0px;  width: ${60}px; height:${40}px; background-color: #40E0D0; text-size:5%; text-align: center;`;
         divs[i].textContent = ARR[i];
     }
 }
