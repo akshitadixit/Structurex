@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="Src/CSS/style.css">
+    <link rel="stylesheet" href="src/css/style.css">
 </head>
 <body>
     <header>
@@ -21,42 +21,23 @@
         </div>
     </header> 
     <section>
-
-        <div id="Info_Cont1">
-            <p> </p>
-        </div>
-
         <div id="array_container">
             
         </div>
+    </section>
 
-        <div id="Info_Cont2">
-            <p> </p>
-        </div>
-
-    </section> 
     <section>
-
-        <div id="Info_Cont1">
-            
+        <div id="array_container2">
+            <button id="b1" onclick = "sort(1)">Bubble Sort</button>
+            <button id="b1" onclick = "sort(2)">Insertion Sort</button>
+            <button id="b1" onclick = "sort(3)">Selection Sort</button>
+            <button id="b1" onclick = "sort(4)">Merge Sort</button>
+            <button id="b1" onclick = "sort(5)">Quick Sort</button>
+            <button id="b1" onclick = "sort(6)">Heap Sort</button>
         </div>
+    </section>
 
-        <center><div id="array_container2">
-            <button id="b1" onclick = "loader(1)">Bubble Sort</button>
-            <button id="b1" onclick = "loader(2)">Insertion Sort</button>
-            <button id="b1" onclick = "loader(3)">Selection Sort</button>
-            <button id="b1" onclick = "loader(4)">Merge Sort</button>
-            <button id="b1" onclick = "loader(5)">Quick Sort</button>
-            <button id="b1" onclick = "loader(6)">Heap Sort</button>
-        </div></center>
-
-        <div id="Info_Cont2">
-            
-        </div>
-
-    </section>    
-    
+    <script src="src/js/visual.js"></script>
+    <script src="src/js/sortingAlgos.js"></script>
 </body>
-<script src="Src/JS/visual.js"></script>
-<script src="Src/JS/sortingAlgos.js"></script>
 </html>
