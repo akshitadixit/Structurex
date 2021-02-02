@@ -1,41 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="src/css/style.css">
-</head>
-<body>
-    <header>
-        <div id="header-inner">
-          <a href="#" id="logo"></a>
-          <div class ="topnav">
-            <a href="#" id="menu-icon"></a>
-            <a href="#">Home</a>
-            <a href="index.html">Sorting</a>
-            <a href="#" class="current">Searching</a>
-            <a href="#">Path Finding</a>
-            <a href="#">Graph</a>
-          </div>
-        </div>
-    </header> 
-    
-    <section>
-        <div id="array_container">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="src/search/css/style.css" />
+    </head>
+    <body>
+        <header>
+            <div id="header-inner">
+                <a href="#" id="logo"></a>
+                <div class="topnav">
+                    <a href="#" id="menu-icon"></a>
+                    <a href="#">Home</a>
+                    <a href="index.html">Sorting</a>
+                    <a href="#" class="current">Searching</a>
+                    <a href="#">Path Finding</a>
+                    <a href="#">Graph</a>
+                </div>
+            </div>
+        </header>
 
-        </div>
-    </section>
+        <section>
+            <div id="array_container"></div>
+        </section>
 
-    <section>
-        <div id="array_container2">
-            <input id="texty" type="text" placeholder="Enter number">
-            <button id="b1" onclick = "search(1)">Linear Search</button>
-            <button id="b2" onclick = "search(2)">Binary Search</button>
-        </div>
-    </section>    
-    
-    <script src="src/js/searching.js"></script>
-    <script src="src/js/visualsearch.js"></script>
-</body>
+        <section>
+            <div id="array_container2">
+                <input id="texty" type="text" placeholder="Enter number" />
+                <button id="b1" onclick="search(1)">Linear Search</button>
+                <button id="b2" onclick="search(2)">Binary Search</button>
+                <div id="result"></div>
+            </div>
+        </section>
+
+        <script src="src/search/js/index.js"></script>
+        <script src="src/search/js/linearSearch.js"></script>
+        <script src="src/search/js/binarySearch.js"></script>
+    </body>
 </html>
