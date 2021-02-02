@@ -1,43 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="src/css/style.css">
-</head>
-<body>
-    <header>
-        <div id="header-inner">
-          <a href="#" id="logo"></a>
-          <div class ="topnav">
-            <a href="#" id="menu-icon"></a>
-            <a href="#" class="current">Home</a>
-            <a href="#">Sorting</a>
-            <a href="search.html">Searching</a>
-            <a href="#">Path Finding</a>
-            <a href="#">Graph</a>
-          </div>
-        </div>
-    </header> 
-    <section>
-        <div id="array_container">
-            
-        </div>
-    </section>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="src/sort/css/style.css" />
+    </head>
+    <body>
+        <header>
+            <div id="header-inner">
+                <a href="#" id="logo"></a>
+                <div class="topnav">
+                    <a href="#" id="menu-icon"></a>
+                    <a href="#" class="current">Home</a>
+                    <a href="#">Sorting</a>
+                    <a href="search.html">Searching</a>
+                    <a href="#">Path Finding</a>
+                    <a href="#">Graph</a>
+                </div>
+            </div>
+        </header>
+        <section>
+            <div id="array_container"></div>
+        </section>
 
-    <section>
-        <div id="array_container2">
-            <button id="b1" onclick = "sort(1)">Bubble Sort</button>
-            <button id="b1" onclick = "sort(2)">Insertion Sort</button>
-            <button id="b1" onclick = "sort(3)">Selection Sort</button>
-            <button id="b1" onclick = "sort(4)">Merge Sort</button>
-            <button id="b1" onclick = "sort(5)">Quick Sort</button>
-            <button id="b1" onclick = "sort(6)">Heap Sort</button>
-        </div>
-    </section>
+        <section>
+            <div id="array_container2">
+                <button id="b1" onclick="sort(1)">Bubble Sort</button>
+                <button id="b1" onclick="sort(2)">Insertion Sort</button>
+                <button id="b1" onclick="sort(3)">Selection Sort</button>
+                <button id="b1" onclick="sort(4)">Merge Sort</button>
+                <button id="b1" onclick="sort(5)">Quick Sort</button>
+                <button id="b1" onclick="sort(6)">Heap Sort</button>
+            </div>
+        </section>
 
-    <script src="src/js/visual.js"></script>
-    <script src="src/js/sortingAlgos.js"></script>
-</body>
+        <script src="src/sort/js/index.js"></script>
+        <script src="src/sort/js/heapSort.js"></script>
+        <script src="src/sort/js/selectionSort.js"></script>
+        <script src="src/sort/js/insertionSort.js"></script>
+        <script src="src/sort/js/mergeSort.js"></script>
+        <script src="src/sort/js/quickSort.js"></script>
+        <script src="src/sort/js/bubbleSort.js"></script>
+    </body>
 </html>
