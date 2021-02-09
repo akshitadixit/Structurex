@@ -26,12 +26,32 @@
 
         <section>
             <div id="array_container2">
-                <button id="b1" onclick="sort(1)">Bubble Sort</button>
-                <button id="b1" onclick="sort(2)">Insertion Sort</button>
-                <button id="b1" onclick="sort(3)">Selection Sort</button>
-                <button id="b1" onclick="sort(4)">Merge Sort</button>
-                <button id="b1" onclick="sort(5)">Quick Sort</button>
-                <button id="b1" onclick="sort(6)">Heap Sort</button>
+                <button class="b1" onclick="sort(1)">Bubble Sort</button>
+                <button class="b1" onclick="sort(2)">Insertion Sort</button>
+                <button class="b1" onclick="sort(3)">Selection Sort</button>
+                <button class="b1" onclick="sort(4)">Merge Sort</button>
+                <button class="b1" onclick="sort(5)">Quick Sort</button>
+                <button class="b1" onclick="sort(6)">Heap Sort</button>
+            </div>
+        </section>
+
+        <section>
+            <div id="array_container3">
+                <label for="values">Number of values:</label>
+                <select name="values" id="values" onchange="changeN()">
+                    <option value="10" >10</option>
+                    <option value="20">20</option>
+                    <option value="50" selected>50</option>
+                    <option value="100">100</option>
+                </select>
+                <label for="speed">Speed:</label>
+                <select name="speed" id="speed" onchange="changeSpeed()">
+                    <option value="800">0.5x</option>
+                    <option value="400">1x</option>
+                    <option value="300">1.5x</option>
+                    <option value="200" selected>2x</option>
+                    <option value="100">4x</option>
+                </select>
             </div>
         </section>
 
