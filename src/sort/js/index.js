@@ -14,8 +14,8 @@ function changeN() {
 }
 
 function changeSpeed() {
-    var newdelay = document.getElementById("speed").value;
-    delay2 = newdelay*100;
+    var factor = document.getElementById("speed").value;
+    delay2 = factor*100;
     genArray();
 }
 
