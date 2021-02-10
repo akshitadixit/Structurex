@@ -14,9 +14,9 @@ function changeN() {
 }
 
 function changeSpeed() {
+    var newdelay = document.getElementById("speed").value;
+    delay2 = newdelay*100;
     genArray();
-    // console.log(document.getElementById("speed").value)
-    delay2 = document.getElementById("speed").value;
 }
 
 function change(d, h, c) {
@@ -36,10 +36,9 @@ function genArray() {
     }
 }
 
-function sort(ch) {
+function sorting(ch) {
     genArray();
     delay1 = 0;
-    console.log(delay2);
     switch (ch) {
         case 1:
             bubbleSort();

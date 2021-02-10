@@ -1,5 +1,6 @@
 function bubbleSort() {
     delay1 = 0;
+    console.log(delay2);
     for (var i = 0; i < N - 1; i++) {
         for (var j = 0; j < N - i - 1; j++) {
             change(divs[j], ARR[j], "yellow"); //Color update
