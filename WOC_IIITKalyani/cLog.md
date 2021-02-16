@@ -19,3 +19,7 @@
 * Changes Made: [PR #14](https://github.com/akshitadixit/Structurex/pull/14)
   1. Added Speed and Number of vales Option to the Sorting Visualizer [Issue #13](https://github.com/akshitadixit/Structurex/issues/13)
   2. Solved bug with speed(was not working properly)
+
+  ### shiv shankar kumar
+  * Changes Made: [PR #8](https://github.com/akshitadixit/Structurex/pull/8)
+  1. Organized repo.
