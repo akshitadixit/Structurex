@@ -1,4 +1,9 @@
 function binarysearch() {
+    ARR.sort((a, b) => a - b);
+    for (var i = 0; i < N; i++) {
+        divs[i].textContent = ARR[i];
+    }
+
     var l = 0;
     var r = ARR.length - 1;
     var inputval = document.getElementById("texty").value;
