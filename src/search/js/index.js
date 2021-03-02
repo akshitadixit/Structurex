@@ -1,4 +1,4 @@
-var ARR = [0, 12, 34, 45, 52, 62, 81, 111, 167, 265, 521, 529, 536];
+var ARR = [];
 var divs = [];
 var N = 13;
 var delay1 = 0; //milliseconds
@@ -11,11 +11,12 @@ function change(d, h, c) {
     setTimeout(function () {
         d.style.backgroundColor = c;
     }, (delay1 += delay2));
-}
+} 
 
 function genArray() {
     cont.innerHTML = "";
     for (var i = 0; i < N; i++) {
+        ARR[i] = Math.floor(Math.random() * 100 + 1);
         divs[i] = document.createElement("div");
         cont.appendChild(divs[i]);
         divs[

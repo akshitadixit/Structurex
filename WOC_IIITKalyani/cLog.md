@@ -21,6 +21,7 @@
   2. Solved bug with speed(was not working properly)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   ### shiv shankar kumar
   * Changes Made: [PR #8](https://github.com/akshitadixit/Structurex/pull/8)
   1. Organized repo.
@@ -30,3 +31,12 @@
   1. Organized repo.
   2.added animation in navbar
 >>>>>>> 624aeeacb3342478b333d6b7e59e99624a8c69dd
+=======
+* Changes Made: [PR #16](https://github.com/akshitadixit/Structurex/pull/16)
+  1. Fixed Bug (size of container changes while sort)  [Issue #15](https://github.com/akshitadixit/Structurex/issues/15)
+  
+### shiv shankar kumar
+* Changes Made: [PR #8](https://github.com/akshitadixit/Structurex/pull/8)
+  1. Organized repo.
+  2. added animation in navbar
+>>>>>>> a3ed7a032018ab8b687666083d05b2a1c24c3abc
