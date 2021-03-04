@@ -63,6 +63,31 @@ div.circleBehind a:hover:after {
 
 /*navbar1*/
 
+/*logo */
+.navbar-brand
+{
+  padding: 0px; 
+}
+
+.navbar-brand img{
+  background:rgb(248, 242, 242); 
+ border-radius: 60%; /* the magic */
+    padding: 9px 10px;
+  position:relative;
+    float: left;
+    height: 50px;
+   margin: 10px 5px 0px 100px;
+  
+
+    
+}
+    
+    
+    
+  
+
+/*2n endl logo*/
+
 #array_container {
   display: flex;
   justify-content: space-evenly;
