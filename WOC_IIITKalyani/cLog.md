@@ -23,7 +23,9 @@
 * Changes Made: [PR #16](https://github.com/akshitadixit/Structurex/pull/16)
   1. Fixed Bug (size of container changes while sort)  [Issue #15](https://github.com/akshitadixit/Structurex/issues/15)
   
+  
 ### shiv shankar kumar
+
 * Changes Made: [PR #8](https://github.com/akshitadixit/Structurex/pull/8)
   1. Organized repo.
 
@@ -37,6 +39,9 @@
   2. added in sorting page 
   3. added in searching page
 
-  *Changes Made[PR #28]()
+  *Changes Made[PR #28](https://github.com/akshitadixit/Structurex/pull/28)
   1. added logo to sorting page
   2. added logo to serching page
+
+  *Changes Made[PR #22](https://github.com/akshitadixit/Structurex/pull/22)
+  1.Added home page.
