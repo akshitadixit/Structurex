@@ -63,23 +63,7 @@ div.circleBehind a:hover:after {
 
 /*navbar1*/
 
-/*logo/
-.navbar-brand
-{
-  padding: 0px; 
-}
-
-.navbar-brand > img
-{
-   height: 100%;  
-   width: auto;
-   max-height: 100%; 
-   margin: 0 auto;
-}
- 
-/*logo endl*/
-/*2nd logo*/
-
+/*logo */
 .navbar-brand
 {
   padding: 0px; 
@@ -87,12 +71,13 @@ div.circleBehind a:hover:after {
 
 .navbar-brand img{
   background:rgb(248, 242, 242); 
- border-radius: 50%; /* the magic */
-    padding: 3px 7px;
+ border-radius: 60%; /* the magic */
+    padding: 9px 10px;
   position:relative;
     float: left;
     height: 50px;
-   margin: -20px 5px 0px 100px;
+   margin: 10px 5px 0px 100px;
+  
 
     
 }

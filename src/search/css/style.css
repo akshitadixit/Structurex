@@ -27,7 +27,27 @@ div.container a {
 .blue {
   background: #2196f3;
 }
+ 
+/*logo */
+.navbar-brand
+{
+  padding: 0px; 
+}
 
+.navbar-brand img{
+  background:rgb(248, 242, 242); 
+ border-radius: 60%; /* the magic */
+    padding: 9px 10px;
+  position:relative;
+    float: left;
+    height: 50px;
+   margin: 10px 5px 0px 100px;
+  
+
+    
+}
+    /*logo endl*/
+    
 /* Circle behind */
 div.circleBehind a:before,
 div.circleBehind a:after {
