@@ -26,4 +26,17 @@
 ### shiv shankar kumar
 * Changes Made: [PR #8](https://github.com/akshitadixit/Structurex/pull/8)
   1. Organized repo.
-  2. added animation in navbar
+
+* changes Made: [PR #17](https://github.com/akshitadixit/Structurex/pull/17)
+  Changes in button
+  1. added styling buttons in sorting page
+  2. added styling in searching page
+
+*changes Made:[PR #19](https://github.com/akshitadixit/Structurex/pull/19)
+  1. added animation in navbar
+  2. added in sorting page 
+  3. added in searching page
+
+  *Changes Made[PR #28]()
+  1. added logo to sorting page
+  2. added logo to serching page
