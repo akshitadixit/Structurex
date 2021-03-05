@@ -23,7 +23,7 @@
 * Changes Made: [PR #16](https://github.com/akshitadixit/Structurex/pull/16)
   1. Fixed Bug (size of container changes while sort)  [Issue #15](https://github.com/akshitadixit/Structurex/issues/15)
   
-* Changes Made: [PR #16](https://github.com/akshitadixit/Structurex/pull/16)
+* Changes Made: [PR #26](https://github.com/akshitadixit/Structurex/pull/26)
   1. Randomize the numbers in Search Array  [Issue #21](https://github.com/akshitadixit/Structurex/issues/21)
   2. Button Style Allignment Improved.
 
