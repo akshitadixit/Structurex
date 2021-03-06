@@ -35,6 +35,13 @@
 * Changes Made: [PR #16](https://github.com/akshitadixit/Structurex/pull/16)
   1. Fixed Bug (size of container changes while sort)  [Issue #15](https://github.com/akshitadixit/Structurex/issues/15)
   
+* Changes Made: [PR #26](https://github.com/akshitadixit/Structurex/pull/26)
+  1. Randomize the numbers in Search Array  [Issue #21](https://github.com/akshitadixit/Structurex/issues/21)
+  2. Button Style Allignment Improved.
+
+* Changes Made: [PR #32](https://github.com/akshitadixit/Structurex/pull/32)
+  1. Changed Landing Page from Sorting to Home Page.
+  
   
 ### shiv shankar kumar
 
@@ -45,23 +52,28 @@
 >>>>>>> a3ed7a032018ab8b687666083d05b2a1c24c3abc
 =======
 
-* changes Made: [PR #17](https://github.com/akshitadixit/Structurex/pull/17)
+* Changes Made: [PR #17](https://github.com/akshitadixit/Structurex/pull/17)
   Changes in button
   1. added styling buttons in sorting page
   2. added styling in searching page
 
-*changes Made:[PR #19](https://github.com/akshitadixit/Structurex/pull/19)
+* Changes Made:[PR #19](https://github.com/akshitadixit/Structurex/pull/19)
   1. added animation in navbar
   2. added in sorting page 
   3. added in searching page
 
-  *Changes Made[PR #28](https://github.com/akshitadixit/Structurex/pull/28)
+* Changes Made[PR #28](https://github.com/akshitadixit/Structurex/pull/28)
   1. added logo to sorting page
   2. added logo to serching page
 <<<<<<< HEAD
 >>>>>>> c5db73e2d70b8d8d061356c5a91f5bc0b3d6b5ac
 =======
 
+<<<<<<< HEAD
   *Changes Made[PR #22](https://github.com/akshitadixit/Structurex/pull/22)
   1.Added home page.
 >>>>>>> a3a2ff94b0914fcc2804c8d2b7812c869b03d82d
+=======
+* Changes Made[PR #22](https://github.com/akshitadixit/Structurex/pull/22)
+  1.Added home page.
+>>>>>>> c97ce3f50c73c4cb83ae1349ed7a2ac22c87ec9a
