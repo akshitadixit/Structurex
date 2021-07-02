@@ -48,7 +48,7 @@ function found(res, idx, inputval) {
 genArray();
 
 function search(ch) {
-    genArray();
+    
     delay1 = 0;
     var y = document.querySelector("#result");
     y.textContent = "";

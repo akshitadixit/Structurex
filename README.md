@@ -14,7 +14,7 @@ Understanding algorithms with visulization is much easy.
 **Structurex** project aims to build such **JavaScript** based Data Structure and Algorithm visualizer.
 
 <h2 align="center"> Implementations include:</h2>
-<h3>Searching:<h3>
+<h3>Sorting:</h3>
 
 * Bubble Sort
 * Selection Sort
@@ -22,6 +22,9 @@ Understanding algorithms with visulization is much easy.
 * Insertion Sort
 * Quick Sort
 * Heap Sort
+
+<h3>Searching:</h3>
+
 * Linear search
 * Binary Search
 
@@ -86,7 +89,13 @@ Now create a branch using the git checkout command:
 ```
 Branch name could be anything preferably related to your name or issue.
 
-<h2>5.Make changes and commit them</h2>
+Keep your cloned repo upto date by pulling from upstream (this will also avoid any merge conflicts while committing new changes)
+
+```bash
+    git pull origin main
+```
+
+<h3>5.Make changes and commit them</h3>
   Make the necessary changes on your local computer and save the file.
 
   Add those changes to the branch you just created using the `git add` command:
@@ -104,14 +113,14 @@ Commit those changes using `git commit` command:
 ```bash
     git commit -m "message about what you have done"
 ```
-<h2>6. Push changes to github</h2>
+<h3>6. Push changes to github</h3>
 
 ```bash
     git push origin <add-your-branch-name>
 ```
 `<add-your-branch-name>`  name of the branch you created earlier.
 
-<h2>7.Submit your changes</h2>
+<h3>7.Submit your changes</h3>
 
 Once you push the changes to your repo, the `Compare & pull request`button will appear in GitHub.Click it and you will be taken to another screen.Then click `Create pull request` button.
 
