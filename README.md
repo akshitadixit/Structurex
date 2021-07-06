@@ -144,7 +144,6 @@ If you do not find any issue, try to create one by identifying problems in the p
 
 
 <h2 align=center>License 📄</h2>
-
+ See the [LICENSE](./LICENSE) file for details
 <p align="center">
 <img width=35% src="https://media.tenor.com/images/68ecdcb63296f1db6532bf5b83051da9/tenor.gif"></p>
- See the [LICENSE](./LICENSE) file for details
