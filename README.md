@@ -38,8 +38,8 @@ Understanding algorithms with visulization is much easy.
 <h2 align=center>Tech Stacks:</h2>
 <p align="center">
 <img height="200" width ="200" src = "https://github.com/PrathmeshMutke/Structurex/blob/af285c31a199bf46c94a55d78fbba2bdfd8985b6/512px-HTML5_logo_and_wordmark.svg.png"></img>
-<img height="200" width ="200" src = ""></img>
-<img height="200" width ="200" src = ""></img>
+<img height="200" width ="200" src = "https://github.com/PrathmeshMutke/Structurex/blob/5296dd489f6348fc4e7e3af36ab2cd6fdbe65d18/CSS-Logo.png"></img>
+<img height="200" width ="200" src = " "></img>
 
 <h2 align=center>  How to get started? </h2> 
  
