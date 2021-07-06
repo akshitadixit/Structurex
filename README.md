@@ -36,10 +36,10 @@ Understanding algorithms with visulization is much easy.
 * A few graph algos (maybe)
 
 <h2 align=center>Tech Stacks:</h2>
-
-- HTML
-- CSS
-- JAVASCRIPT
+<p align="center">
+<img height="200" width ="200" src = ""></img>
+<img height="200" width ="200" src = ""></img>
+<img height="200" width ="200" src = ""></img>
 
 <h2 align=center>  How to get started? </h2> 
  
