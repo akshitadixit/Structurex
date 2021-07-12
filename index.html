@@ -8,9 +8,16 @@
         <link rel="stylesheet" href="src/home/css/style.css" />
         <!-- Page icon -->
         <link rel="icon" href="./src/assets/logo.png">
-        </style>
+        
     </head>
-    <body>
+    <body class="no-scroll-preload">
+        <div class="loader-container">
+            <div class="atom">
+                <div class="electron"></div>
+                <div class="electron-alpha"></div>
+                <div class="electron-omega"></div>
+            </div>
+        </div>
 <header>
   <div id="header-inner">
     <a href="#" id="logo"></a>
@@ -57,5 +64,23 @@
   </ul>
 </div>
 </main>
+<script>
+    let loader = document.querySelector(".loader-container");
+
+window.addEventListener("load", vanish);
+
+function vanish() {
+  loader.classList.add("disappear");
+}
+$(function () {
+  $("a.nav-link").each(function () {
+    if ($(this).prop("href") == window.location.href) {
+      $(this).addClass("current-link");
+    }
+  });
+});
+    </script>
+
 </body>
+    
 </html>
