@@ -1,3 +1,13 @@
+:root {
+  --primary-background: #fff;
+  --primary-border-card: rgba(0, 0, 0, 0.125);
+  --primary-date: grey;
+  --primary-title: black;
+  --primary-organisation: black;
+  --primary-input-border: #e1e4e8;
+  --primary-input-background: #fff;
+  --primary-contact-background:#E5E5FF;
+}
 * {
   box-sizing: border-box;
 }
