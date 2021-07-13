@@ -82,8 +82,11 @@ div.circleBehind a:hover:after {
 }
 
 /*navbar1*/
+
 #array_container {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  gap: 10px;
   justify-content: space-evenly;
   width: 80%;
   margin: 5% auto;
@@ -92,9 +95,10 @@ div.circleBehind a:hover:after {
 }
 
 #array_container2 {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  gap: 20px;
   width: 80%;
-  flex-wrap: wrap;
   justify-content: left;
   margin: 1% auto;
   padding: 1%;
@@ -122,6 +126,9 @@ button {
 
 .button {
   background: rgb(20, 165, 145);
+  width: 100px;
+  height: 100px;
+  font-size: 25px;
   background: linear-gradient(
     0deg,
     rgba(20, 243, 213) 0%,
