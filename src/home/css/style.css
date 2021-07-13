@@ -276,14 +276,14 @@ nav {
 /*navbar1*/
 @import "https://fonts.googleapis.com/css?family=Raleway";
 
-div.container {
+div.container1 {
   font-family: Raleway;
   margin: 0 auto;
   padding: 2em 2em;
   text-align: center;
 }
 
-div.container a {
+div.container1 a {
   color: #fff;
   text-decoration: none;
   font: 20px Raleway;
@@ -299,11 +299,11 @@ div.container a {
 }
 
 /*logo */
-.navbar-brand {
+.navbar-brand1 {
   padding: 0px;
 }
 
-.navbar-brand img {
+.navbar-brand1 img {
   background: rgb(248, 242, 242);
   border-radius: 60%; /* the magic */
   padding: 9px 10px;
@@ -393,3 +393,124 @@ h1 {
   font-size: 0.9rem;
   color: #757575;
 }
+footer {
+  border-top: 2px solid var(--primary-border-card);
+  width: 100%;
+  text-align: center;
+  flex: none;
+  position: sticky;
+  top: 100%;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  align-items: center;
+}
+
+#contactus{
+  background-color: var(--primary-contact-background);
+  padding:25px 50px;
+  padding-bottom: 55px;
+  margin-top: 60px;
+}
+
+#contact-head{
+  text-align: center;
+  text-transform: uppercase;
+  color:var(--primary-title);
+  font-weight: 650;
+  font-size: 35px;
+  border-bottom:1.5px solid var(--primary-title);
+  padding-bottom: 4px;
+}
+
+#contact-message{
+  color:var(--primary-title);
+  margin-top: 15px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 20px;
+  margin:0px 80px;
+}
+
+#form-footer{
+  margin-top: 30px;
+}
+
+.center-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-table{
+  padding:10px 25px;
+  padding-bottom:30px;
+  min-width: 450px;
+  max-width:500px;
+  background-color: var(--primary-background);
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.input-container{
+  margin:30px 10px;
+}
+
+.contact-inputs{
+  margin-left: 5px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  color:var(--primary-title);
+}
+
+.btn-md{
+  font-weight: 600;
+  background-color: #0084ad;
+  color:var(--primary-background);
+  width:100%;
+}
+
+#social-section{
+  padding:70px 0px;
+}
+
+.footer-details{
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.footer-details i{
+  color:#0084ad;
+}
+
+.footer-details span{
+  color:grey;
+}
+
+#social-media-icons{
+  margin-top:20px;
+  padding:0px 50px;
+  display:flex;
+  justify-content: space-between;
+  font-size: 28px;
+}
+
+.social-media{
+  color:var(--primary-title);
+  transition: color 0.15s ease-in;
+}
+
+.social-media:hover{
+  color:#0084ad;
+}
+
+.form-control{
+  border:1.5px solid var(--primary-input-border);
+  background-color: var(--primary-input-background); 
+}
+
+.form-control:focus {
+border: 1.5px solid var(--primary-input-border);
+background-color: var(--primary-input-background);
+outline: none;
+}
+
