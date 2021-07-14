@@ -1,0 +1,28 @@
+/***** styling for the more button in the top *****/
+
+.dropdown {
+     position: relative;
+     display: inline-block;
+}
+/* set the size and position of more button */
+.Morebutton {
+     padding: 10px 30px;
+     font-size: 15px;
+}
+/* style for background of list items */
+#list-items {
+    display: none;
+    position: absolute;
+    background-color: #2196f3;
+    min-width: 185px;
+	border: 1px solid black;
+}
+/* styling for list items */
+#list-items a {
+     display: block;
+     font-size: 18px;
+     background-color: #b7d7e8;
+     color: black;
+     text-decoration: none;
+     padding: 10px;
+}

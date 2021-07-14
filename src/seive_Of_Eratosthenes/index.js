@@ -1,3 +1,14 @@
+
+/***********
+ * fileName: index.js
+ * date: 14 july 2021
+ * Author: Victor Swaroop (@GVictorsd)
+ *
+ * file contains the Script to drive seiveErato.html
+ *
+ ************/
+
+
 var ARR = [];
 var divs = [];
 var N = 60;
@@ -42,7 +53,7 @@ function sieveEratos() {
 	mem[1] = false;
 	const defaultColor = "#40E0D0";
 	const DELAY1 = 50;
-	const DELAY2 = 50;
+	const DELAY2 = 500;
 	const highlightColor = "red";
 	const primeColor = "#ffcc5c";
 	const nprimeColor = "#82b74b";

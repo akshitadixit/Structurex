@@ -6,10 +6,14 @@
         <!-- <title>Document</title> -->
         <title>Structurex</title>
         <link rel="stylesheet" href="src/home/css/style.css" />
+		<!-- style for more button -->
+		<link rel="stylesheet" href="src/home/css/morebutton.css" />
         <!-- Page icon -->
         <link rel="icon" href="./src/assets/logo.png">
         
     </head>
+
+
     <body class="no-scroll-preload">
         <div class="loader-container">
             <div class="atom">
@@ -30,6 +34,16 @@
         <a href="search.html">Searching</a>
         <a href="#">Path Finding</a>
         <a href="#">Graph</a>
+		<div class="dropdown">
+			<button onclick="show_hide()" class="Morebutton" > More </button>
+			<center>
+				<div id="list-items">
+					<!-- Add more list items here if required -->
+					<a href="seiveErato.html">Sieve of Eratosthenes</a>
+
+				</div>
+			</center>
+		</div>
     </div>
 </div>
 <div class="logo-center">
@@ -80,6 +94,8 @@ $(function () {
   });
 });
     </script>
+
+	<script src="src/home/js/morebutton.js"></script>
 
 </body>
     

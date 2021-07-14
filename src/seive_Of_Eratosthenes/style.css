@@ -1,3 +1,13 @@
+
+/*************
+ * fileName: style.css
+ * date: 14 july 2021
+ * Author: Victor Swaroop ( @GVictorsd )
+ *
+ * This file holds the styling code for seiveErato.html
+ *
+ * ***********/
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -143,6 +153,10 @@ button {
     rgba(0, 3, 255, 1) 0%,
     rgba(2, 126, 251, 1) 100%
   );
+}
+.buttondiv {
+	display: flex;
+	justify-content: center;
 }
 
 .topnav {
