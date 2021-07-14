@@ -21,7 +21,8 @@ function changeSpeed() {
 
 function change(d, h, c) {
     setTimeout(function () {
-        d.style = ` margin:0% 0.2%;  width: 60px; height:${h}px; background-color:${c};`;
+        d.style = ` margin:0% 0.2%;  width: 60px; height:${h}px; background-color:${c};font-weight:800; text-align:center;`;
+        d.textContent =h ;
     }, (delay1 += delay2));
 }
 
@@ -32,7 +33,8 @@ function genArray() {
         ARR[i] = Math.floor(Math.random() * 100 + 1);
         divs[i] = document.createElement("div");
         cont.appendChild(divs[i]);
-        divs[i].style = `margin:0% 0.2%;  width:60px; height:${ARR[i]}px; background-color: #40E0D0;`;
+        divs[i].style = `margin:0% 0.2%;  width:60px; height:${ARR[i]}px; background-color: #40E0D0;font-weight:800; text-align:center;`;
+        divs[i].textContent = ARR[i];
     }
 }
 
