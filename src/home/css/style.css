@@ -368,7 +368,7 @@ h1 {
   color: #757575;
 }
 .cards {
-	margin: 10px;
+  margin: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
@@ -379,13 +379,14 @@ h1 {
   background-color: #0084ad;
   color: #fff;
 }
-.card header h2,a {
+.card header h2,
+a {
   font-size: 1.4rem;
   font-weight: normal;
-	color: white;
+  color: white;
   margin: 0;
   padding: 0;
-	text-decoration: none;
+  text-decoration: none;
 }
 
 .card .body {
@@ -393,6 +394,160 @@ h1 {
   font-size: 0.9rem;
   color: #757575;
 }
+
+/* styling footer */
+footer {
+  position: relative;
+  padding-bottom: 0px;
+  width: 100%;
+  background-color: hsl(0, 76%, 3%);
+  color: #fff;
+  height: 40vh;
+}
+.main-content {
+  display: flex;
+  position: relative;
+}
+.main-content .box {
+  flex-basis: 50%;
+  padding: 10px 20px;
+  margin-top: 40px;
+}
+.box h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #0084ad;
+}
+.box .content {
+  margin: 20px 0 0 0;
+}
+.box .content p {
+  text-align: justify;
+  padding-top: 15px;
+}
+.box .content:before {
+  /* position: absolute; */
+  content: "";
+  top: 94px;
+  height: 2px;
+  width: 100%;
+  background: #151511;
+}
+.box .content:after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 15%;
+  background: #0084ad;
+  top: 94px;
+}
+.left .content .links {
+  margin: 43px 0 0 0;
+}
+.left .content .links a {
+  padding: 0 2px;
+}
+.left .content .links i {
+  height: 40px;
+  width: 40px;
+  background: #1a1a1a;
+  line-height: 40px;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+.left .content .links i:hover {
+  background: #0084ad;
+}
+.address .content .fas {
+  font-size: 1.437rem;
+  background: #1a1a1a;
+  color: #fff;
+  height: 45px;
+  width: 45px;
+  line-height: 45px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.address .content .fas:hover {
+  background: #0084ad;
+}
+.address .content .text {
+  font-size: 1.067rem;
+  font-weight: 500;
+  padding-left: 10px;
+  padding-top: 15px;
+}
+.address .content .email {
+  font-size: 1.067rem;
+  font-weight: 500;
+}
+.right form .msg {
+  margin-top: 10px;
+}
+.right form .text {
+  font-size: 1.06rem;
+  margin-bottom: 2px;
+  color: #fff;
+}
+.right form .btn {
+  margin-top: 10px;
+}
+.right form .btn button {
+  height: 40px;
+  width: 100%;
+  border: none;
+  outline: none;
+  background: #0084ad;
+  font-size: 1.06rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+  color: #fff;
+}
+.right form .btn button:hover {
+  background: #151511;
+}
+.right form input,
+.right form textarea {
+  width: 100%;
+  font-size: 1.067rem;
+  background: #151515;
+  padding-left: 10px;
+  border: 1px solid #0084ad;
+}
+.right form input,
+.right form textarea:focus {
+  outline-color: #0277bd;
+}
+.right form input {
+  height: 35px;
+}
+.footer-bottom {
+  width: 100%;
+}
+.footer-bottom center {
+  font-size: 1.3rem;
+  padding-top: 5px;
+  color: #0084ad;
+}
+@media screen and(max-width: 960px) {
+  footer {
+    position: relative;
+    bottom: 0px;
+  }
+  .main-content {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .main-content .box{
+    margin: 5px 0;
+  }
+}
+/* =======
 footer {
   border-top: 2px solid var(--primary-border-card);
   width: 100%;
@@ -513,4 +668,5 @@ border: 1.5px solid var(--primary-input-border);
 background-color: var(--primary-input-background);
 outline: none;
 }
+ */
 
