@@ -32,7 +32,7 @@ function found(res, idx, inputval) {
             var x = document.getElementById("#array_container2");
             var y = document.querySelector("#result");
             y.textContent = "Element " + inputval + " found at index: " + idx;
-            y.style.color = "red";
+            y.style.color = "green";
             change(divs[idx], ARR[idx], "#40E0D0", delay2);
         }, delay1);
     } else {
@@ -52,7 +52,11 @@ function search(ch) {
     delay1 = 0;
     var y = document.querySelector("#result");
     y.textContent = "";
-
+    val = document.getElementById("texty").value;
+    if  (val === ""){
+        y.textContent = "Please enter an element first";
+        return;
+    }
     switch (ch) {
         case 1:
             linearsearch();
