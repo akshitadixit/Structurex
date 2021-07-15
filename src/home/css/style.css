@@ -373,6 +373,7 @@ width:2px;
   font-family: 'Encode Sans SC', sans-serif;
   text-align: right;
   text-transform: uppercase;
+  font-size: 20px;
 }
 .heck .link:hover{
   font-weight: bold;
