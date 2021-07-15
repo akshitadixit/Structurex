@@ -7,6 +7,7 @@
          <!-- Page icon -->
          <link rel="icon" href="./src/assets/favicon.png">
         <link rel="stylesheet" href="src/sort/css/style.css" />
+		<link rel="stylesheet" href="src/home/css/morebutton.css" />
     </head>
     <body>
         <header>
@@ -17,6 +18,7 @@
                     <img src="src/assets/nlogo.png" class="main-logo" >
                     <href="#" class="name">Structurex</a>
                 </a>
+<<<<<<< HEAD
                 <div class="container blue">
 
                     <ul class="heck">
@@ -26,6 +28,25 @@
                     <a href="search.html" target="_blank" class="link">Searching</a>
                     <a href="#" class="link">Path Finding</a>
                     <a href="#" class="link">Graph</a>
+=======
+                <div class="container blue circleBehind">
+                    <a href="#" id="menu-icon"></a>
+                    <a href="index.html" class="current">Home</a>
+                    <a href="#">Sorting</a>
+                    <a href="search.html">Searching</a>
+                    <a href="#">Path Finding</a>
+                    <a href="#">Graph</a>
+					<div class="dropdown">
+						<button onclick="show_hide()" class="Morebutton" > More </button>
+						<center>
+							<div id="list-items">
+								<!-- Add more list items here if required -->
+								<a href="seiveErato.html">Sieve of Eratosthenes</a>
+
+							</div>
+						</center>
+					</div>
+>>>>>>> upstream/main
                 </div>
             </div>
         </header>
@@ -72,5 +93,7 @@
         <script src="src/sort/js/mergeSort.js"></script>
         <script src="src/sort/js/quickSort.js"></script>
         <script src="src/sort/js/bubbleSort.js"></script>
+		<!-- script for more button on the top -->
+		<script src="src/home/js/morebutton.js"></script>
     </body>
 </html>
