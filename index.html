@@ -10,7 +10,7 @@
 	      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
 	      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
 	      crossorigin="anonymous"
-	    />
+ />
 	    <link
 	      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
 	      rel="stylesheet"
@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="src/home/css/style.css" />
         <script src="https://use.fontawesome.com/7ade57373d.js"></script>
         <!-- Page icon -->
-        <link rel="icon" href="./src/assets/logo.png">
+        <link rel="icon" href="./src/assets/favicon.png">
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
  
@@ -34,16 +34,25 @@
 <header>
   <div id="header-inner">
     <a href="#" id="logo"></a>
-     <a class="navbar-brand1" rel="home" href="#" title="logo">
-            <img src="src/assets/logo.png" width="90" height="80" >
-    <div class="container1 blue circleBehind">
-        <a href="#" id="menu-icon"></a>
-        <a href="#" class="current">Home</a>
-        <a href="sort.html">Sorting</a>
-        <a href="search.html">Searching</a>
-        <a href="#">Path Finding</a>
-        <a href="#">Graph</a>
-    </div>
+     <a class="navbar-brand1" rel="home" href="#" title="Structurex">
+            <img src="src/assets/nlogo.png"  class="main-logo">
+            
+            <href="#" class="name">Structurex</a>
+                        
+    <div class="container1 blue" id="navbarNav">
+        <!-- ------HAMBURGER MENU -------->
+    
+      <!-- -----------NEW CHANGES----------- -->
+
+        <ul class="heck"> 
+        <a href="#home" class="link">Home</a>
+        <a href="sort.html" target="_blank" class="link">Sorting</a>
+        <a href="search.html" target="_blank" class="link">Searching</a>
+        <a href="#" class="link">Path Finding</a>
+        <a href="tree.html" class="link" target="_blank" class="link">Graph</a>
+        </ul>
+
+  </div>
 </div>
 <div class="logo-center">
 <img src="src/assets/logo.png" width="80%" xlink:href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/cars-logo.jpg">
@@ -51,9 +60,9 @@
 </header>
 
 <main>
-   
-<h1>Javascript based Data Structure and Algorithm Visualizer</h1>
-<p> <center>Algorithm Visualizer is an interactive online platform that visualizes algorithms from code.</center></p>
+   <br><br>
+<h1 class="head">JavaScript Based Data Structure & Algorithm Visualizer</h1>
+<h3 class="details"> <center>Algorithm Visualizer is an interactive online platform that visualizes algorithms from the code.<br> Making your work way more easier</center></h3>
 <div class="cards">
     <div class="card">
         <header>
@@ -77,6 +86,8 @@
   </ul>
 </div>
 </main>
+
+
 
 <!-- Footer -->
 <footer>
@@ -215,6 +226,21 @@ $(function () {
       integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
       crossorigin="anonymous"
     ></script>
+
+
+
+        <!-- HAMBURGER MENU SCRIPT -->
+        <script>
+          function myFunction() {
+            var x = document.getElementById("navbarNav");
+            if (x.style.display === "block") {
+              x.style.display = "none";
+            } else {
+              x.style.display = "block";
+            }
+          }
+          </script>
+    
 </body>
     
 </html>
