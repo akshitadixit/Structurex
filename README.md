@@ -28,6 +28,10 @@ Understanding algorithms with visulization is much easy.
 * Linear search
 * Binary Search
 
+<h3> Other </h3>
+
+* Sieve of Eratosthenes
+
 <h3> To-do/In-progress:</h3>
 
 * BST - search, traversals, creation
