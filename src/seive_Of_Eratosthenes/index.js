@@ -27,7 +27,9 @@ function genArray() {
         cont.appendChild(divs[i]);
         divs[
             i
-        ].style = ` margin: 0 0.2%; padding: 20px 0px 0px 0px;  width: ${60}px; height:${40}px; background-color: #40E0D0; text-size:5%; text-align: center; border-radius:10px;`;
+        ].style = ` margin: 0 0.2%; padding: 20px 0px 0px 0px; 
+			width: ${60}px; height:${40}px; background-color: #40E0D0;
+			text-size:5%; text-align: center; border-radius:10px;`;
         divs[i].textContent = ARR[i];
     }
 }
@@ -36,7 +38,9 @@ function genArray() {
 function addResult(elem) {
 	const div = document.createElement("div");
 	Result.appendChild(div);
-	div.style = ` margin: 0 0.2%; padding: 20px 0px 0px 0px;  width: ${60}px; height:${40}px; background-color: #40E0D0; text-size:5%; text-align: center; border-radius:10px;`;
+	div.style = ` margin: 0 0.2%; padding: 20px 0px 0px 0px; 
+		width: ${60}px; height:${40}px; background-color: #40E0D0;
+		text-size:5%; text-align: center; border-radius:10px;`;
 	div.textContent = elem;
 }
 
@@ -52,8 +56,7 @@ function sieveEratos() {
 	var mem = [];
 	mem[1] = false;
 	const defaultColor = "#40E0D0";
-	const DELAY1 = 50;
-	const DELAY2 = 500;
+	const DELAY = 300;
 	const highlightColor = "red";
 	const primeColor = "#ffcc5c";
 	const nprimeColor = "#82b74b";
@@ -62,12 +65,12 @@ function sieveEratos() {
 
 		if(mem[i] != true) {
 			mem[i] = false;
-			change(divs[i-1], 20, highlightColor, DELAY2);
-			change(divs[i-1], 20, primeColor, DELAY2);
+			change(divs[i-1], 20, highlightColor, DELAY);
+			change(divs[i-1], 20, primeColor, DELAY);
 
 			for(var j = i*i; j<=N; j+=i){
-				change(divs[j-1], 20, highlightColor, DELAY2);
-				change(divs[j-1], 20, nprimeColor, DELAY2);
+				change(divs[j-1], 20, highlightColor, DELAY);
+				change(divs[j-1], 20, nprimeColor, DELAY);
 				mem[j] = true;
 			}
 		}
