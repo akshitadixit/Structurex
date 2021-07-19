@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- <title>Document</title> -->
+        <title>Linear Search</title>
+        <link
+	      rel="stylesheet"
+	      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+	      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+	      crossorigin="anonymous"
+	    />
+	    <link
+	      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+	      rel="stylesheet"
+	    />
+        <link rel="stylesheet" href="src/home/css/style.css" />
+        <script src="https://use.fontawesome.com/7ade57373d.js"></script>
+        <!-- Page icon -->
+        <link rel="icon" href="./src/assets/logo.png">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+ 
+    </head>
+<body>
+    <header>
+        <div id="header-inner">
+          <a href="#" id="logo"></a>
+           <a class="navbar-brand1" rel="home" href="#" title="logo">
+            <img src="src/assets/logo.png" width="90" height="80" >
+          <div class="container1 blue circleBehind">
+              <a href="#" id="menu-icon"></a>
+              <a href="#" class="current">Home</a>
+              <a href="sort.html">Sorting</a>
+              <a href="search.html">Searching</a>
+              <a href="#">Path Finding</a>
+              <a href="#">Graph</a>
+          </div>
+      </div>
+
+      </header>
+
+
+      <div class="algo">
+         <br>
+         <br>
+    <h1>Linear Search </h1>
+     <p>Linear search is a very simple search algorithm. In this type of search, a sequential search is made over all items one by one. Every item is checked and if a match is found then that particular item is returned, otherwise the search continues till the end of the data collection.</p>
+     <br>
+     <br>
+     <div class="box1">
+      <div class="Process">
+         <h1>How Linear Search works</h1>
+          
+          <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/linear_search.gif" alt="Linear search Animation">
+          
+        <div class ="algorithm">
+        <h3>Algorithm</h3>
+       <b>Step 1 −</b>Set i to 1<br>
+    <b>Step 2 −</b> if i > n then go to step 7<br>
+    <b>Step 3 −</b>  if A[i] = x then go to step 6 <br>
+    <b>Step 4 − </b>Set i to i + 1<br>
+    <b>Step 5 − </b> Go to Step 2 <br>
+    <b>Step 6 −</b> Print Element x Found at index i and go to step 8 <br>
+    <b>Step 7 − </b>Print element not found <br>
+    <b>Step 8 −</b> Exit <br>
+    </p>
+        </div>
+    
+    
+    
+        </div>
+
+        <div class = "code">  
+            <pre class="prettyprint notranslate prettyprinted" style=""><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;stdio.h&gt;</span><span class="pln">
+
+            </span><span class="com">#define</span><span class="pln"> MAX </span><span class="lit">20</span><span class="pln">
+            
+            </span><span class="com">// array of items on which linear search will be conducted.</span><span class="pln">
+            </span><span class="kwd">int</span><span class="pln"> intArray</span><span class="pun">[</span><span class="pln">MAX</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="lit">1</span><span class="pun">,</span><span class="lit">2</span><span class="pun">,</span><span class="lit">3</span><span class="pun">,</span><span class="lit">4</span><span class="pun">,</span><span class="lit">6</span><span class="pun">,</span><span class="lit">7</span><span class="pun">,</span><span class="lit">9</span><span class="pun">,</span><span class="lit">11</span><span class="pun">,</span><span class="lit">12</span><span class="pun">,</span><span class="lit">14</span><span class="pun">,</span><span class="lit">15</span><span class="pun">,</span><span class="lit">16</span><span class="pun">,</span><span class="lit">17</span><span class="pun">,</span><span class="lit">19</span><span class="pun">,</span><span class="lit">33</span><span class="pun">,</span><span class="lit">34</span><span class="pun">,</span><span class="lit">43</span><span class="pun">,</span><span class="lit">45</span><span class="pun">,</span><span class="lit">55</span><span class="pun">,</span><span class="lit">66</span><span class="pun">};</span><span class="pln">
+            
+            </span><span class="kwd">void</span><span class="pln"> printline</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> count</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               </span><span class="kwd">int</span><span class="pln"> i</span><span class="pun">;</span><span class="pln">
+                
+               </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">i </span><span class="pun">&lt;</span><span class="pln">count</span><span class="pun">-</span><span class="lit">1</span><span class="pun">;</span><span class="pln">i</span><span class="pun">++)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                  printf</span><span class="pun">(</span><span class="str">"="</span><span class="pun">);</span><span class="pln">
+               </span><span class="pun">}</span><span class="pln">
+                
+               printf</span><span class="pun">(</span><span class="str">"=\n"</span><span class="pun">);</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+            
+            </span><span class="com">// this method makes a linear search. </span><span class="pln">
+            </span><span class="kwd">int</span><span class="pln"> find</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> data</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            
+               </span><span class="kwd">int</span><span class="pln"> comparisons </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+               </span><span class="kwd">int</span><span class="pln"> index </span><span class="pun">=</span><span class="pln"> </span><span class="pun">-</span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+               </span><span class="kwd">int</span><span class="pln"> i</span><span class="pun">;</span><span class="pln">
+            
+               </span><span class="com">// navigate through all items </span><span class="pln">
+               </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">i</span><span class="pun">&lt;</span><span class="pln">MAX</span><span class="pun">;</span><span class="pln">i</span><span class="pun">++)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                
+                  </span><span class="com">// count the comparisons made </span><span class="pln">
+                  comparisons</span><span class="pun">++;</span><span class="pln">
+                    
+                  </span><span class="com">// if data found, break the loop</span><span class="pln">
+                  </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">data </span><span class="pun">==</span><span class="pln"> intArray</span><span class="pun">[</span><span class="pln">i</span><span class="pun">])</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                     index </span><span class="pun">=</span><span class="pln"> i</span><span class="pun">;</span><span class="pln">
+                     </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+                  </span><span class="pun">}</span><span class="pln">
+               </span><span class="pun">}</span><span class="pln">   
+                
+               printf</span><span class="pun">(</span><span class="str">"Total comparisons made: %d"</span><span class="pun">,</span><span class="pln"> comparisons</span><span class="pun">);</span><span class="pln">
+               </span><span class="kwd">return</span><span class="pln"> index</span><span class="pun">;</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+            
+            </span><span class="kwd">void</span><span class="pln"> display</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               </span><span class="kwd">int</span><span class="pln"> i</span><span class="pun">;</span><span class="pln">
+               printf</span><span class="pun">(</span><span class="str">"["</span><span class="pun">);</span><span class="pln">
+                
+               </span><span class="com">// navigate through all items </span><span class="pln">
+               </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">i</span><span class="pun">&lt;</span><span class="pln">MAX</span><span class="pun">;</span><span class="pln">i</span><span class="pun">++)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                  printf</span><span class="pun">(</span><span class="str">"%d "</span><span class="pun">,</span><span class="pln">intArray</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]);</span><span class="pln">
+               </span><span class="pun">}</span><span class="pln">
+                
+               printf</span><span class="pun">(</span><span class="str">"]\n"</span><span class="pun">);</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+            
+            </span><span class="kwd">void</span><span class="pln"> main</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               printf</span><span class="pun">(</span><span class="str">"Input Array: "</span><span class="pun">);</span><span class="pln">
+               display</span><span class="pun">();</span><span class="pln">
+               printline</span><span class="pun">(</span><span class="lit">50</span><span class="pun">);</span><span class="pln">
+                
+               </span><span class="com">//find location of 1</span><span class="pln">
+               </span><span class="kwd">int</span><span class="pln"> location </span><span class="pun">=</span><span class="pln"> find</span><span class="pun">(</span><span class="lit">55</span><span class="pun">);</span><span class="pln">
+            
+               </span><span class="com">// if element was found </span><span class="pln">
+               </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">location </span><span class="pun">!=</span><span class="pln"> </span><span class="pun">-</span><span class="lit">1</span><span class="pun">)</span><span class="pln">
+                  printf</span><span class="pun">(</span><span class="str">"\nElement found at location: %d"</span><span class="pln"> </span><span class="pun">,(</span><span class="pln">location</span><span class="pun">+</span><span class="lit">1</span><span class="pun">));</span><span class="pln">
+               </span><span class="kwd">else</span><span class="pln">
+                  printf</span><span class="pun">(</span><span class="str">"Element not found."</span><span class="pun">);</span><span class="pln">
+            </span><span class="pun">}</span></pre>
+    </div>
+
+    
+                 
+</div>
+
+<p style=" margin-left: 50%;"> If we compile and run the above program, it will produce the following result −</p>
+<h2 style=" margin-left: 50%;">Output</h2>
+<div class="output">
+    <pre class="result notranslate">Input Array: [1 2 3 4 6 7 9 11 12 14 15 16 17 19 33 34 43 45 55 66 ]
+        ==================================================
+        Total comparisons made: 19
+        Element found at location: 19
+        </pre>
+
+
+   </div>
+        </div>
+    
+
+    
+    
+
+</body>
+</html>

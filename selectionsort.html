@@ -54,7 +54,31 @@
      <br>
      <br>
      <div class="box1">
-
+      <div class="Process">
+         <h1>How Selection Sort Works?</h1>
+          <p>Consider the following depicted array as an example.</p>
+          <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/unsorted_array.jpg">
+          <p>For the first position in the sorted list, the whole list is scanned sequentially. The first position where 14 is stored presently, we search the whole list and find that 10 is the lowest value.</p>
+          <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/selection_sort_1.jpg" alt="">
+         <p>So we replace 14 with 10. After one iteration 10, which happens to be the minimum value in the list, appears in the first position of the sorted list.</p>
+         <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/selection_sort_2.jpg" alt="">
+         
+         <p>For the second position, where 33 is residing, we start scanning the rest of the list in a linear manner.</p>
+         <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/selection_sort_3.jpg" alt="">
+         
+         <p>We find that 14 is the second lowest value in the list and it should appear at the second place. We swap these values.</p>
+         <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/selection_sort_4.jpg" alt="">
+         
+         <p>After two iterations, two least values are positioned at the beginning in a sorted manner.</p>
+         <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/selection_sort_5.jpg" alt="">
+        
+         <p>The same process is applied to the rest of the items in the array.
+         <br>
+          Following is a pictorial depiction of the entire sorting process −</p>
+         <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/selection_sort.jpg" alt="">
+         
+        
+          </div>
       <div class = "code">
            
     
@@ -131,31 +155,7 @@
          
           </div>
 
-     <div class="Process">
-     <h1>How Selection Sort Works?</h1>
-      <p>Consider the following depicted array as an example.</p>
-      <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/unsorted_array.jpg">
-      <p>For the first position in the sorted list, the whole list is scanned sequentially. The first position where 14 is stored presently, we search the whole list and find that 10 is the lowest value.</p>
-      <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/selection_sort_1.jpg" alt="">
-     <p>So we replace 14 with 10. After one iteration 10, which happens to be the minimum value in the list, appears in the first position of the sorted list.</p>
-     <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/selection_sort_2.jpg" alt="">
      
-     <p>For the second position, where 33 is residing, we start scanning the rest of the list in a linear manner.</p>
-     <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/selection_sort_3.jpg" alt="">
-     
-     <p>We find that 14 is the second lowest value in the list and it should appear at the second place. We swap these values.</p>
-     <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/selection_sort_4.jpg" alt="">
-     
-     <p>After two iterations, two least values are positioned at the beginning in a sorted manner.</p>
-     <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/selection_sort_5.jpg" alt="">
-    
-     <p>The same process is applied to the rest of the items in the array.
-     <br>
-      Following is a pictorial depiction of the entire sorting process −</p>
-     <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/selection_sort.jpg" alt="">
-     
-    
-      </div>
                  
    
 
@@ -163,8 +163,8 @@
 
    </div>
         <br>
-        <p>If we compile and run the above program, it will produce the following result −</p>
-        <h2>Output:</h2>
+        <p style=" margin-left: 50%;">If we compile and run the above program, it will produce the following result −</p>
+        <h2 style=" margin-left: 50%;">Output:</h2>
     
         <div class="output">
          <pre class="result notranslate">Input Array: [4 6 3 2 1 9 7 ]

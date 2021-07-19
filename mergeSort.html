@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- <title>Document</title> -->
+        <title>Merge Sort</title>
+        <link
+	      rel="stylesheet"
+	      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+	      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+	      crossorigin="anonymous"
+	    />
+	    <link
+	      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+	      rel="stylesheet"
+	    />
+        <link rel="stylesheet" href="src/home/css/style.css" />
+        <script src="https://use.fontawesome.com/7ade57373d.js"></script>
+        <!-- Page icon -->
+        <link rel="icon" href="./src/assets/logo.png">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+ 
+    </head>
+<body>
+    <header>
+        <div id="header-inner">
+          <a href="#" id="logo"></a>
+           <a class="navbar-brand1" rel="home" href="#" title="logo">
+            <img src="src/assets/logo.png" width="90" height="80" >
+          <div class="container1 blue circleBehind">
+              <a href="#" id="menu-icon"></a>
+              <a href="#" class="current">Home</a>
+              <a href="sort.html">Sorting</a>
+              <a href="search.html">Searching</a>
+              <a href="#">Path Finding</a>
+              <a href="#">Graph</a>
+          </div>
+      </div>
+
+      </header>
+
+
+      <div class="algo">
+         <br>
+         <br>
+    <h1>Merge Sort</h1>
+     <p>Merge sort is a sorting technique based on divide and conquer technique. With worst-case time complexity being Ο(n log n), it is one of the most respected algorithms.
+        <br>
+        Merge sort first divides the array into equal halves and then combines them in a sorted manner.</p>
+     <br>
+     <br>
+     <div class="box1">
+      <div class="Process">
+         <h1>How Merge Sort Works?</h1>
+          <p>To understand merge sort, we take an unsorted array as the following −</p>
+          <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/unsorted_array.jpg">
+          <p>We know that merge sort first divides the whole array iteratively into equal halves unless the atomic values are achieved. We see here that an array of 8 items is divided into two arrays of size 4.</p>
+          <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/merge_sort_divide_1.jpg" alt="">
+         <p>We further divide these arrays and we achieve atomic value which can no more be divided.</p>
+         <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/merge_sort_divide_3.jpg" alt="">
+         <p>Now, we combine them in exactly the same manner as they were broken down. Please note the color codes given to these lists.
+         We first compare the element for each list and then combine them into another list in a sorted manner. We see that 14 and 33 are in sorted positions. We compare 27 and 10 and in the target list of 2 values we put 10 first, followed by 27. We change the order of 19 and 35 whereas 42 and 44 are placed sequentially.</p>
+         <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/merge_sort_combine_1.jpg" alt="">
+         <p>In the next iteration of the combining phase, we compare lists of two data values, and merge them into a list of found data values placing all in a sorted order.</p>
+         <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/merge_sort_combine_2.jpg" alt="">
+         <p>After the final merging, the list should look like this −</p>
+         <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/merge_sort.jpg" alt="">
+         <p>Now we should learn some programming aspects of merge sorting.</p>
+    
+        <div class ="algorithm">
+         <h3>Algorithm</h3>
+    <p>Merge sort keeps on dividing the list into equal halves until it can no more be divided. By definition, if it is only one element in the list, it is sorted. Then, merge sort combines the smaller sorted lists keeping the new list sorted too.
+    </p>
+    <p> <b>Step 1 −</b> if it is only one element in the list it is already sorted, return.
+       <br><b>Step 2 −</b> divide the list recursively into two halves until it can no more be divided.
+       <br><b>Step 3 − </b>merge the smaller lists into new list in sorted order.</p>
+        </div>
+    
+    
+    
+        </div>
+
+        <div class = "code">  
+        <pre class="prettyprint notranslate prettyprinted" style=""><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;stdio.h&gt;</span><span class="pln">
+
+        </span><span class="com">#define</span><span class="pln"> max </span><span class="lit">10</span><span class="pln">
+        
+        </span><span class="kwd">int</span><span class="pln"> a</span><span class="pun">[</span><span class="lit">11</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="lit">10</span><span class="pun">,</span><span class="pln"> </span><span class="lit">14</span><span class="pun">,</span><span class="pln"> </span><span class="lit">19</span><span class="pun">,</span><span class="pln"> </span><span class="lit">26</span><span class="pun">,</span><span class="pln"> </span><span class="lit">27</span><span class="pun">,</span><span class="pln"> </span><span class="lit">31</span><span class="pun">,</span><span class="pln"> </span><span class="lit">33</span><span class="pun">,</span><span class="pln"> </span><span class="lit">35</span><span class="pun">,</span><span class="pln"> </span><span class="lit">42</span><span class="pun">,</span><span class="pln"> </span><span class="lit">44</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> </span><span class="pun">};</span><span class="pln">
+        </span><span class="kwd">int</span><span class="pln"> b</span><span class="pun">[</span><span class="lit">10</span><span class="pun">];</span><span class="pln">
+        
+        </span><span class="kwd">void</span><span class="pln"> merging</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> low</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> mid</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> high</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+           </span><span class="kwd">int</span><span class="pln"> l1</span><span class="pun">,</span><span class="pln"> l2</span><span class="pun">,</span><span class="pln"> i</span><span class="pun">;</span><span class="pln">
+        
+           </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">l1 </span><span class="pun">=</span><span class="pln"> low</span><span class="pun">,</span><span class="pln"> l2 </span><span class="pun">=</span><span class="pln"> mid </span><span class="pun">+</span><span class="pln"> </span><span class="lit">1</span><span class="pun">,</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> low</span><span class="pun">;</span><span class="pln"> l1 </span><span class="pun">&lt;=</span><span class="pln"> mid </span><span class="pun">&amp;&amp;</span><span class="pln"> l2 </span><span class="pun">&lt;=</span><span class="pln"> high</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+              </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">a</span><span class="pun">[</span><span class="pln">l1</span><span class="pun">]</span><span class="pln"> </span><span class="pun">&lt;=</span><span class="pln"> a</span><span class="pun">[</span><span class="pln">l2</span><span class="pun">])</span><span class="pln">
+                 b</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> a</span><span class="pun">[</span><span class="pln">l1</span><span class="pun">++];</span><span class="pln">
+              </span><span class="kwd">else</span><span class="pln">
+                 b</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> a</span><span class="pun">[</span><span class="pln">l2</span><span class="pun">++];</span><span class="pln">
+           </span><span class="pun">}</span><span class="pln">
+           
+           </span><span class="kwd">while</span><span class="pun">(</span><span class="pln">l1 </span><span class="pun">&lt;=</span><span class="pln"> mid</span><span class="pun">)</span><span class="pln">    
+              b</span><span class="pun">[</span><span class="pln">i</span><span class="pun">++]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> a</span><span class="pun">[</span><span class="pln">l1</span><span class="pun">++];</span><span class="pln">
+        
+           </span><span class="kwd">while</span><span class="pun">(</span><span class="pln">l2 </span><span class="pun">&lt;=</span><span class="pln"> high</span><span class="pun">)</span><span class="pln">   
+              b</span><span class="pun">[</span><span class="pln">i</span><span class="pun">++]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> a</span><span class="pun">[</span><span class="pln">l2</span><span class="pun">++];</span><span class="pln">
+        
+           </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">i </span><span class="pun">=</span><span class="pln"> low</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;=</span><span class="pln"> high</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++)</span><span class="pln">
+              a</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> b</span><span class="pun">[</span><span class="pln">i</span><span class="pun">];</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        
+        </span><span class="kwd">void</span><span class="pln"> sort</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> low</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> high</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+           </span><span class="kwd">int</span><span class="pln"> mid</span><span class="pun">;</span><span class="pln">
+           
+           </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">low </span><span class="pun">&lt;</span><span class="pln"> high</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+              mid </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="pln">low </span><span class="pun">+</span><span class="pln"> high</span><span class="pun">)</span><span class="pln"> </span><span class="pun">/</span><span class="pln"> </span><span class="lit">2</span><span class="pun">;</span><span class="pln">
+              sort</span><span class="pun">(</span><span class="pln">low</span><span class="pun">,</span><span class="pln"> mid</span><span class="pun">);</span><span class="pln">
+              sort</span><span class="pun">(</span><span class="pln">mid</span><span class="pun">+</span><span class="lit">1</span><span class="pun">,</span><span class="pln"> high</span><span class="pun">);</span><span class="pln">
+              merging</span><span class="pun">(</span><span class="pln">low</span><span class="pun">,</span><span class="pln"> mid</span><span class="pun">,</span><span class="pln"> high</span><span class="pun">);</span><span class="pln">
+           </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> 
+              </span><span class="kwd">return</span><span class="pun">;</span><span class="pln">
+           </span><span class="pun">}</span><span class="pln">   
+        </span><span class="pun">}</span><span class="pln">
+        
+        </span><span class="kwd">int</span><span class="pln"> main</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> 
+           </span><span class="kwd">int</span><span class="pln"> i</span><span class="pun">;</span><span class="pln">
+        
+           printf</span><span class="pun">(</span><span class="str">"List before sorting\n"</span><span class="pun">);</span><span class="pln">
+           
+           </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;=</span><span class="pln"> max</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++)</span><span class="pln">
+              printf</span><span class="pun">(</span><span class="str">"%d "</span><span class="pun">,</span><span class="pln"> a</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]);</span><span class="pln">
+        
+           sort</span><span class="pun">(</span><span class="lit">0</span><span class="pun">,</span><span class="pln"> max</span><span class="pun">);</span><span class="pln">
+        
+           printf</span><span class="pun">(</span><span class="str">"\nList after sorting\n"</span><span class="pun">);</span><span class="pln">
+           
+           </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;=</span><span class="pln"> max</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++)</span><span class="pln">
+              printf</span><span class="pun">(</span><span class="str">"%d "</span><span class="pun">,</span><span class="pln"> a</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]);</span><span class="pln">
+        </span><span class="pun">}</span></pre>
+    </div>
+
+
+                 
+</div>
+
+<p style=" margin-left: 50%;">If we compile and run the above program, it will produce the following result −</p>
+<h2 style=" margin-left: 50%;">Output</h2>
+<div class="output">
+    <pre class="result notranslate">List before sorting
+        10 14 19 26 27 31 33 35 42 44 0
+        List after sorting
+        0 10 14 19 26 27 31 33 35 42 44
+        </pre>
+
+
+   </div>
+        </div>
+    
+
+    
+    
+
+</body>
+</html>

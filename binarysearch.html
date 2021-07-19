@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- <title>Document</title> -->
+        <title>Binary Search</title>
+        <link
+	      rel="stylesheet"
+	      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+	      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+	      crossorigin="anonymous"
+	    />
+	    <link
+	      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+	      rel="stylesheet"
+	    />
+        <link rel="stylesheet" href="src/home/css/style.css" />
+        <script src="https://use.fontawesome.com/7ade57373d.js"></script>
+        <!-- Page icon -->
+        <link rel="icon" href="./src/assets/logo.png">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+ 
+    </head>
+<body>
+    <header>
+        <div id="header-inner">
+          <a href="#" id="logo"></a>
+           <a class="navbar-brand1" rel="home" href="#" title="logo">
+            <img src="src/assets/logo.png" width="90" height="80" >
+          <div class="container1 blue circleBehind">
+              <a href="#" id="menu-icon"></a>
+              <a href="#" class="current">Home</a>
+              <a href="sort.html">Sorting</a>
+              <a href="search.html">Searching</a>
+              <a href="#">Path Finding</a>
+              <a href="#">Graph</a>
+          </div>
+      </div>
+
+      </header>
+
+
+      <div class="algo">
+         <br>
+         <br>
+    <h1>Binary Search</h1>
+     <p>Binary search is a fast search algorithm with run-time complexity of Ο(log n). This search algorithm works on the principle of divide and conquer. For this algorithm to work properly, the data collection should be in the sorted form.
+<br>
+        Binary search looks for a particular item by comparing the middle most item of the collection. If a match occurs, then the index of item is returned. If the middle item is greater than the item, then the item is searched in the sub-array to the left of the middle item. Otherwise, the item is searched for in the sub-array to the right of the middle item. This process continues on the sub-array as well until the size of the subarray reduces to zero.</p>
+     <br>
+     <div class="box1">
+      <div class="Process">
+         <h1>How Binary Search Works?</h1>
+          <p>For a binary search to work, it is mandatory for the target array to be sorted. We shall learn the process of binary search with a pictorial example. The following is our sorted array and let us assume that we need to search the location of value 31 using binary search.</p>
+          <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/binary_search_0.jpg">
+          <p>First, we shall determine half of the array by using this formula −</p>
+          <pre>mid = low + (high - low) / 2 </pre>
+          <p>Here it is, 0 + (9 - 0 ) / 2 = 4 (integer value of 4.5). So, 4 is the mid of the array.        </p>
+
+          <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/binary_search_1.jpg" alt="">
+         <p>Now we compare the value stored at location 4, with the value being searched, i.e. 31. We find that the value at location 4 is 27, which is not a match. As the value is greater than 27 and we have a sorted array, so we also know that the target value must be in the upper portion of the array.</p>
+         <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/binary_search_2.jpg" alt="">
+         <p>We change our low to mid + 1 and find the new mid value again.
+            <pre>low = mid + 1 <br>mid = low + (high - low) / 2</pre>
+         <p>Our new mid is 7 now. We compare the value stored at location 7 with our target value 31.</p>
+         <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/binary_search_3.jpg" alt="">
+         <p>The value stored at location 7 is not a match, rather it is more than what we are looking for. So, the value must be in the lower part from this location.</p>
+         <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/binary_search_4.jpg" alt="">
+         <p>Hence, we calculate the mid again. This time it is 5. </p>
+         <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/binary_search_5.jpg" alt="">
+         <p>We compare the value stored at location 5 with our target value. We find that it is a match.</p>
+         <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/binary_search_6.jpg" alt="">
+         <p>We conclude that the target value 31 is stored at location 5. <br>
+
+            Binary search halves the searchable items and thus reduces the count of comparisons to be made to very less numbers.</p>
+    
+        
+    
+    
+        </div>
+
+        <div class = "code">  
+            <pre class="prettyprint notranslate prettyprinted" style=""><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;stdio.h&gt;</span><span class="pln">
+
+            </span><span class="com">#define</span><span class="pln"> MAX </span><span class="lit">20</span><span class="pln">
+            
+            </span><span class="com">// array of items on which linear search will be conducted. </span><span class="pln">
+            </span><span class="kwd">int</span><span class="pln"> intArray</span><span class="pun">[</span><span class="pln">MAX</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="lit">1</span><span class="pun">,</span><span class="lit">2</span><span class="pun">,</span><span class="lit">3</span><span class="pun">,</span><span class="lit">4</span><span class="pun">,</span><span class="lit">6</span><span class="pun">,</span><span class="lit">7</span><span class="pun">,</span><span class="lit">9</span><span class="pun">,</span><span class="lit">11</span><span class="pun">,</span><span class="lit">12</span><span class="pun">,</span><span class="lit">14</span><span class="pun">,</span><span class="lit">15</span><span class="pun">,</span><span class="lit">16</span><span class="pun">,</span><span class="lit">17</span><span class="pun">,</span><span class="lit">19</span><span class="pun">,</span><span class="lit">33</span><span class="pun">,</span><span class="lit">34</span><span class="pun">,</span><span class="lit">43</span><span class="pun">,</span><span class="lit">45</span><span class="pun">,</span><span class="lit">55</span><span class="pun">,</span><span class="lit">66</span><span class="pun">};</span><span class="pln">
+            
+            </span><span class="kwd">void</span><span class="pln"> printline</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> count</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               </span><span class="kwd">int</span><span class="pln"> i</span><span class="pun">;</span><span class="pln">
+                
+               </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">i </span><span class="pun">&lt;</span><span class="pln">count</span><span class="pun">-</span><span class="lit">1</span><span class="pun">;</span><span class="pln">i</span><span class="pun">++)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                  printf</span><span class="pun">(</span><span class="str">"="</span><span class="pun">);</span><span class="pln">
+               </span><span class="pun">}</span><span class="pln">
+                
+               printf</span><span class="pun">(</span><span class="str">"=\n"</span><span class="pun">);</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+            
+            </span><span class="kwd">int</span><span class="pln"> find</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> data</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               </span><span class="kwd">int</span><span class="pln"> lowerBound </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+               </span><span class="kwd">int</span><span class="pln"> upperBound </span><span class="pun">=</span><span class="pln"> MAX </span><span class="pun">-</span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+               </span><span class="kwd">int</span><span class="pln"> midPoint </span><span class="pun">=</span><span class="pln"> </span><span class="pun">-</span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+               </span><span class="kwd">int</span><span class="pln"> comparisons </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">      
+               </span><span class="kwd">int</span><span class="pln"> index </span><span class="pun">=</span><span class="pln"> </span><span class="pun">-</span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+                
+               </span><span class="kwd">while</span><span class="pun">(</span><span class="pln">lowerBound </span><span class="pun">&lt;=</span><span class="pln"> upperBound</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                  printf</span><span class="pun">(</span><span class="str">"Comparison %d\n"</span><span class="pln"> </span><span class="pun">,</span><span class="pln"> </span><span class="pun">(</span><span class="pln">comparisons </span><span class="pun">+</span><span class="lit">1</span><span class="pun">)</span><span class="pln"> </span><span class="pun">);</span><span class="pln">
+                  printf</span><span class="pun">(</span><span class="str">"lowerBound : %d, intArray[%d] = %d\n"</span><span class="pun">,</span><span class="pln">lowerBound</span><span class="pun">,</span><span class="pln">lowerBound</span><span class="pun">,</span><span class="pln">
+                     intArray</span><span class="pun">[</span><span class="pln">lowerBound</span><span class="pun">]);</span><span class="pln">
+                  printf</span><span class="pun">(</span><span class="str">"upperBound : %d, intArray[%d] = %d\n"</span><span class="pun">,</span><span class="pln">upperBound</span><span class="pun">,</span><span class="pln">upperBound</span><span class="pun">,</span><span class="pln">
+                     intArray</span><span class="pun">[</span><span class="pln">upperBound</span><span class="pun">]);</span><span class="pln">
+                  comparisons</span><span class="pun">++;</span><span class="pln">
+                    
+                  </span><span class="com">// compute the mid point</span><span class="pln">
+                  </span><span class="com">// midPoint = (lowerBound + upperBound) / 2;</span><span class="pln">
+                  midPoint </span><span class="pun">=</span><span class="pln"> lowerBound </span><span class="pun">+</span><span class="pln"> </span><span class="pun">(</span><span class="pln">upperBound </span><span class="pun">-</span><span class="pln"> lowerBound</span><span class="pun">)</span><span class="pln"> </span><span class="pun">/</span><span class="pln"> </span><span class="lit">2</span><span class="pun">;</span><span class="pln">	
+                    
+                  </span><span class="com">// data found</span><span class="pln">
+                  </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">intArray</span><span class="pun">[</span><span class="pln">midPoint</span><span class="pun">]</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> data</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                     index </span><span class="pun">=</span><span class="pln"> midPoint</span><span class="pun">;</span><span class="pln">
+                     </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+                  </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                     </span><span class="com">// if data is larger </span><span class="pln">
+                     </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">intArray</span><span class="pun">[</span><span class="pln">midPoint</span><span class="pun">]</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln"> data</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                        </span><span class="com">// data is in upper half</span><span class="pln">
+                        lowerBound </span><span class="pun">=</span><span class="pln"> midPoint </span><span class="pun">+</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+                     </span><span class="pun">}</span><span class="pln">
+                     </span><span class="com">// data is smaller </span><span class="pln">
+                     </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                        </span><span class="com">// data is in lower half </span><span class="pln">
+                        upperBound </span><span class="pun">=</span><span class="pln"> midPoint </span><span class="pun">-</span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+                     </span><span class="pun">}</span><span class="pln">
+                  </span><span class="pun">}</span><span class="pln">               
+               </span><span class="pun">}</span><span class="pln">
+               printf</span><span class="pun">(</span><span class="str">"Total comparisons made: %d"</span><span class="pln"> </span><span class="pun">,</span><span class="pln"> comparisons</span><span class="pun">);</span><span class="pln">
+               </span><span class="kwd">return</span><span class="pln"> index</span><span class="pun">;</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+            
+            </span><span class="kwd">void</span><span class="pln"> display</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               </span><span class="kwd">int</span><span class="pln"> i</span><span class="pun">;</span><span class="pln">
+               printf</span><span class="pun">(</span><span class="str">"["</span><span class="pun">);</span><span class="pln">
+                
+               </span><span class="com">// navigate through all items </span><span class="pln">
+               </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">i</span><span class="pun">&lt;</span><span class="pln">MAX</span><span class="pun">;</span><span class="pln">i</span><span class="pun">++)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                  printf</span><span class="pun">(</span><span class="str">"%d "</span><span class="pun">,</span><span class="pln">intArray</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]);</span><span class="pln">
+               </span><span class="pun">}</span><span class="pln">
+                
+               printf</span><span class="pun">(</span><span class="str">"]\n"</span><span class="pun">);</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+            
+            </span><span class="kwd">void</span><span class="pln"> main</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               printf</span><span class="pun">(</span><span class="str">"Input Array: "</span><span class="pun">);</span><span class="pln">
+               display</span><span class="pun">();</span><span class="pln">
+               printline</span><span class="pun">(</span><span class="lit">50</span><span class="pun">);</span><span class="pln">
+                
+               </span><span class="com">//find location of 1</span><span class="pln">
+               </span><span class="kwd">int</span><span class="pln"> location </span><span class="pun">=</span><span class="pln"> find</span><span class="pun">(</span><span class="lit">55</span><span class="pun">);</span><span class="pln">
+            
+               </span><span class="com">// if element was found </span><span class="pln">
+               </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">location </span><span class="pun">!=</span><span class="pln"> </span><span class="pun">-</span><span class="lit">1</span><span class="pun">)</span><span class="pln">
+                  printf</span><span class="pun">(</span><span class="str">"\nElement found at location: %d"</span><span class="pln"> </span><span class="pun">,(</span><span class="pln">location</span><span class="pun">+</span><span class="lit">1</span><span class="pun">));</span><span class="pln">
+               </span><span class="kwd">else</span><span class="pln">
+                  printf</span><span class="pun">(</span><span class="str">"\nElement not found."</span><span class="pun">);</span><span class="pln">
+            </span><span class="pun">}</span></pre>
+    </div>
+
+
+                 
+</div>
+
+<p style=" margin-left: 50%;">If we compile and run the above program, it will produce the following result −</p>
+<h2 style=" margin-left: 50%;">Output</h2>
+<div class="output">
+    <pre class="result notranslate">Input Array: [1 2 3 4 6 7 9 11 12 14 15 16 17 19 33 34 43 45 55 66 ]
+        ==================================================
+        Comparison 1
+        lowerBound : 0, intArray[0] = 1
+        upperBound : 19, intArray[19] = 66
+        Comparison 2
+        lowerBound : 10, intArray[10] = 15
+        upperBound : 19, intArray[19] = 66
+        Comparison 3
+        lowerBound : 15, intArray[15] = 34
+        upperBound : 19, intArray[19] = 66
+        Comparison 4
+        lowerBound : 18, intArray[18] = 55
+        upperBound : 19, intArray[19] = 66
+        Total comparisons made: 4
+        Element found at location: 19
+        </pre>
+
+
+   </div>
+        </div>
+    
+
+    
+    
+
+</body>
+</html>
