@@ -1,24 +1,25 @@
 
-/*************
- * fileName: style.css
- * date: 14 july 2021
- * Author: Victor Swaroop ( @GVictorsd )
- *
- * This file holds the styling code for seiveErato.html
- *
- * ***********/
-
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
-
+.dropdown{
+  padding-left: 10%;
+}
 /*navbar1*/
-@import "https://fonts.googleapis.com/css?family=Raleway";
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC&display=swap');
+
+
+.new{
+  font-family: 'Encode Sans SC', sans-serif;
+  font-size:2px;
+}
 
 div.container {
-  font-family: Raleway;
+  font-family: 'Encode Sans SC', sans-serif;
+  padding-left: 20%;
   margin: 0 auto;
+  font-size:2px;
   padding: 2em 2em;
   text-align: center;
 }
@@ -35,7 +36,7 @@ div.container a {
 }
 
 .blue {
-  background: #2196f3;
+  background: #100c08;
 }
  
 /*logo */
@@ -58,38 +59,6 @@ div.container a {
 }
     /*logo endl*/
     
-/* Circle behind */
-div.circleBehind a:before,
-div.circleBehind a:after {
-  position: absolute;
-  top: 22px;
-  left: 50%;
-  width: 50px;
-  height: 50px;
-  border: 4px solid #0277bd;
-  transform: translateX(-50%) translateY(-50%) scale(0.8);
-  border-radius: 50%;
-  background: transparent;
-  content: "";
-  opacity: 0;
-  transition: all 0.3s;
-  z-index: -1;
-}
-
-div.circleBehind a:after {
-  border-width: 2px;
-  transition: all 0.4s;
-}
-
-div.circleBehind a:hover:before {
-  opacity: 1;
-  transform: translateX(-50%) translateY(-50%) scale(1);
-}
-
-div.circleBehind a:hover:after {
-  opacity: 1;
-  transform: translateX(-50%) translateY(-50%) scale(1.3);
-}
 
 /*navbar1*/
 
