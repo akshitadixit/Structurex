@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- <title>Document</title> -->
+        <title>Selection Sort</title>
+        <link
+	      rel="stylesheet"
+	      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+	      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+	      crossorigin="anonymous"
+	    />
+	    <link
+	      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+	      rel="stylesheet"
+	    />
+        <link rel="stylesheet" href="src/home/css/style.css" />
+        <script src="https://use.fontawesome.com/7ade57373d.js"></script>
+        <!-- Page icon -->
+        <link rel="icon" href="./src/assets/logo.png">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+ 
+    </head>
+<body>
+    <header>
+        <div id="header-inner">
+          <a href="#" id="logo"></a>
+           <a class="navbar-brand1" rel="home" href="#" title="logo">
+            <img src="src/assets/logo.png" width="90" height="80" >
+          <div class="container1 blue circleBehind">
+              <a href="#" id="menu-icon"></a>
+              <a href="#" class="current">Home</a>
+              <a href="sort.html">Sorting</a>
+              <a href="search.html">Searching</a>
+              <a href="#">Path Finding</a>
+              <a href="#">Graph</a>
+          </div>
+      </div>
+
+      </header>
+
+
+      <div class="algo">
+         <br>
+         <br>
+    <h1>Selection Sort</h1>
+     <p>Selection sort is a simple sorting algorithm. This sorting algorithm is an in-place comparison-based algorithm in which the list is divided into two parts, the sorted part at the left end and the unsorted part at the right end. Initially, the sorted part is empty and the unsorted part is the entire list.
+       <br>
+      The smallest element is selected from the unsorted array and swapped with the leftmost element, and that element becomes a part of the sorted array. This process continues moving unsorted array boundary by one element to the right.
+      <br>
+      This algorithm is not suitable for large data sets as its average and worst case complexities are of Ο(n2), where n is the number of items.</p>
+     <br>
+     <br>
+     <div class="box1">
+      <div class="Process">
+         <h1>How Selection Sort Works?</h1>
+          <p>Consider the following depicted array as an example.</p>
+          <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/unsorted_array.jpg">
+          <p>For the first position in the sorted list, the whole list is scanned sequentially. The first position where 14 is stored presently, we search the whole list and find that 10 is the lowest value.</p>
+          <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/selection_sort_1.jpg" alt="">
+         <p>So we replace 14 with 10. After one iteration 10, which happens to be the minimum value in the list, appears in the first position of the sorted list.</p>
+         <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/selection_sort_2.jpg" alt="">
+         
+         <p>For the second position, where 33 is residing, we start scanning the rest of the list in a linear manner.</p>
+         <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/selection_sort_3.jpg" alt="">
+         
+         <p>We find that 14 is the second lowest value in the list and it should appear at the second place. We swap these values.</p>
+         <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/selection_sort_4.jpg" alt="">
+         
+         <p>After two iterations, two least values are positioned at the beginning in a sorted manner.</p>
+         <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/selection_sort_5.jpg" alt="">
+        
+         <p>The same process is applied to the rest of the items in the array.
+         <br>
+          Following is a pictorial depiction of the entire sorting process −</p>
+         <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/selection_sort.jpg" alt="">
+         
+        
+          </div>
+      <div class = "code">
+           
+    
+      
+         <pre class="prettyprint notranslate prettyprinted" style=""><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;stdio.h&gt;</span><span class="pln">
+         </span><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;stdbool.h&gt;</span><span class="pln">
+         
+         </span><span class="com">#define</span><span class="pln"> MAX </span><span class="lit">7</span><span class="pln">
+         
+         </span><span class="kwd">int</span><span class="pln"> intArray</span><span class="pun">[</span><span class="pln">MAX</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="lit">4</span><span class="pun">,</span><span class="lit">6</span><span class="pun">,</span><span class="lit">3</span><span class="pun">,</span><span class="lit">2</span><span class="pun">,</span><span class="lit">1</span><span class="pun">,</span><span class="lit">9</span><span class="pun">,</span><span class="lit">7</span><span class="pun">};</span><span class="pln">
+         
+         </span><span class="kwd">void</span><span class="pln"> printline</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> count</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="kwd">int</span><span class="pln"> i</span><span class="pun">;</span><span class="pln">
+            
+            </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">i </span><span class="pun">&lt;</span><span class="pln"> count</span><span class="pun">-</span><span class="lit">1</span><span class="pun">;</span><span class="pln">i</span><span class="pun">++)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               printf</span><span class="pun">(</span><span class="str">"="</span><span class="pun">);</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+            
+            printf</span><span class="pun">(</span><span class="str">"=\n"</span><span class="pun">);</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln">
+         
+         </span><span class="kwd">void</span><span class="pln"> display</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="kwd">int</span><span class="pln"> i</span><span class="pun">;</span><span class="pln">
+            printf</span><span class="pun">(</span><span class="str">"["</span><span class="pun">);</span><span class="pln">
+            
+            </span><span class="com">// navigate through all items </span><span class="pln">
+            </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">i </span><span class="pun">&lt;</span><span class="pln"> MAX</span><span class="pun">;</span><span class="pln">i</span><span class="pun">++)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               printf</span><span class="pun">(</span><span class="str">"%d "</span><span class="pun">,</span><span class="pln"> intArray</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]);</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+            
+            printf</span><span class="pun">(</span><span class="str">"]\n"</span><span class="pun">);</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln">
+         
+         </span><span class="kwd">void</span><span class="pln"> selectionSort</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="kwd">int</span><span class="pln"> indexMin</span><span class="pun">,</span><span class="pln">i</span><span class="pun">,</span><span class="pln">j</span><span class="pun">;</span><span class="pln">
+            
+            </span><span class="com">// loop through all numbers </span><span class="pln">
+            </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;</span><span class="pln"> MAX</span><span class="pun">-</span><span class="lit">1</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> 
+            
+               </span><span class="com">// set current element as minimum </span><span class="pln">
+               indexMin </span><span class="pun">=</span><span class="pln"> i</span><span class="pun">;</span><span class="pln">
+               
+               </span><span class="com">// check the element to be minimum </span><span class="pln">
+               </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">j </span><span class="pun">=</span><span class="pln"> i</span><span class="pun">+</span><span class="lit">1</span><span class="pun">;</span><span class="pln">j </span><span class="pun">&lt;</span><span class="pln"> MAX</span><span class="pun">;</span><span class="pln">j</span><span class="pun">++)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                  </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">intArray</span><span class="pun">[</span><span class="pln">j</span><span class="pun">]</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln"> intArray</span><span class="pun">[</span><span class="pln">indexMin</span><span class="pun">])</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                     indexMin </span><span class="pun">=</span><span class="pln"> j</span><span class="pun">;</span><span class="pln">
+                  </span><span class="pun">}</span><span class="pln">
+               </span><span class="pun">}</span><span class="pln">
+         
+               </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">indexMin </span><span class="pun">!=</span><span class="pln"> i</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                  printf</span><span class="pun">(</span><span class="str">"Items swapped: [ %d, %d ]\n"</span><span class="pln"> </span><span class="pun">,</span><span class="pln"> intArray</span><span class="pun">[</span><span class="pln">i</span><span class="pun">],</span><span class="pln"> intArray</span><span class="pun">[</span><span class="pln">indexMin</span><span class="pun">]);</span><span class="pln"> 
+                  
+                  </span><span class="com">// swap the numbers </span><span class="pln">
+                  </span><span class="kwd">int</span><span class="pln"> temp </span><span class="pun">=</span><span class="pln"> intArray</span><span class="pun">[</span><span class="pln">indexMin</span><span class="pun">];</span><span class="pln">
+                  intArray</span><span class="pun">[</span><span class="pln">indexMin</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> intArray</span><span class="pun">[</span><span class="pln">i</span><span class="pun">];</span><span class="pln">
+                  intArray</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> temp</span><span class="pun">;</span><span class="pln">
+               </span><span class="pun">}</span><span class="pln">          
+         
+               printf</span><span class="pun">(</span><span class="str">"Iteration %d#:"</span><span class="pun">,(</span><span class="pln">i</span><span class="pun">+</span><span class="lit">1</span><span class="pun">));</span><span class="pln">
+               display</span><span class="pun">();</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln">  
+         
+         </span><span class="kwd">void</span><span class="pln"> main</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            printf</span><span class="pun">(</span><span class="str">"Input Array: "</span><span class="pun">);</span><span class="pln">
+            display</span><span class="pun">();</span><span class="pln">
+            printline</span><span class="pun">(</span><span class="lit">50</span><span class="pun">);</span><span class="pln">
+            selectionSort</span><span class="pun">();</span><span class="pln">
+            printf</span><span class="pun">(</span><span class="str">"Output Array: "</span><span class="pun">);</span><span class="pln">
+            display</span><span class="pun">();</span><span class="pln">
+            printline</span><span class="pun">(</span><span class="lit">50</span><span class="pun">);</span><span class="pln">
+         </span><span class="pun">}</span></pre>
+   
+         
+          </div>
+
+     
+                 
+   
+
+
+
+   </div>
+        <br>
+        <p style=" margin-left: 50%;">If we compile and run the above program, it will produce the following result −</p>
+        <h2 style=" margin-left: 50%;">Output:</h2>
+    
+        <div class="output">
+         <pre class="result notranslate">Input Array: [4 6 3 2 1 9 7 ]
+            ==================================================
+            Items swapped: [ 4, 1 ]
+            Iteration 1#:[1 6 3 2 4 9 7 ]
+            Items swapped: [ 6, 2 ]
+            Iteration 2#:[1 2 3 6 4 9 7 ]
+            Iteration 3#:[1 2 3 6 4 9 7 ]
+            Items swapped: [ 6, 4 ]
+            Iteration 4#:[1 2 3 4 6 9 7 ]
+            Iteration 5#:[1 2 3 4 6 9 7 ]
+            Items swapped: [ 9, 7 ]
+            Iteration 6#:[1 2 3 4 6 7 9 ]
+            Output Array: [1 2 3 4 6 7 9 ]
+            ==================================================
+            </pre>
+
+
+
+
+        </div>
+        </div>
+        
+
+    
+    
+
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- <title>Document</title> -->
+        <title>Structurex</title>
+        <link
+	      rel="stylesheet"
+	      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+	      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+	      crossorigin="anonymous"
+	    />
+	    <link
+	      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+	      rel="stylesheet"
+	    />
+        <link rel="stylesheet" href="src/home/css/style.css" />
+        <script src="https://use.fontawesome.com/7ade57373d.js"></script>
+        <!-- Page icon -->
+        <link rel="icon" href="./src/assets/logo.png">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+ 
+    </head>
+<body>
+    <header>
+        <div id="header-inner">
+          <a href="#" id="logo"></a>
+           <a class="navbar-brand1" rel="home" href="#" title="logo">
+            <img src="src/assets/logo.png" width="90" height="80" >
+          <div class="container1 blue circleBehind">
+              <a href="#" id="menu-icon"></a>
+              <a href="#" class="current">Home</a>
+              <a href="sort.html">Sorting</a>
+              <a href="search.html">Searching</a>
+              <a href="#">Path Finding</a>
+              <a href="#">Graph</a>
+          </div>
+      </div>
+
+      </header>
+
+
+      <div class="Bubblesort">
+         <br>
+         <br>
+    <h1>Bubble Sort</h1>
+     <p>Bubble sort is a simple sorting algorithm. This sorting algorithm is comparison-based algorithm in which each pair of adjacent elements is compared and the elements are swapped if they are not in order. This algorithm is not suitable for large data sets as its average and worst case complexity are of Ο(n2) where n is the number of items.</p>
+     <br>
+     <br>
+     <div class="box1">
+     <div class="Process">
+     <h1>How Bubble Sort Works?</h1>
+      <p>We take an unsorted array for our example. Bubble sort takes Ο(n2) time so we're keeping it short and precise.</p>
+      <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/bubble_sort_0.jpg">
+      <p>Bubble sort starts with very first two elements, comparing them to check which one is greater.</p>
+      <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/bubble_sort_1.jpg" alt="">
+     <p>In this case, value 33 is greater than 14, so it is already in sorted locations. Next, we compare 33 with 27.</p>
+     <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/bubble_sort_2.jpg" alt="">
+     <p>We find that 27 is smaller than 33 and these two values must be swapped.</p>
+     <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/bubble_sort_3.jpg" alt="">
+     <p>The new array should look like this −</p>
+     <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/bubble_sort_4.jpg" alt="">
+     <p>Next we compare 33 and 35. We find that both are in already sorted positions.</p>
+     <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/bubble_sort_5.jpg" alt="">
+     <p>Then we move to the next two values, 35 and 10.</p>
+     <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/bubble_sort_6.jpg" alt="">
+     <p>We know then that 10 is smaller 35. Hence they are not sorted.</p>
+     <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/bubble_sort_7.jpg" alt="">
+     <p>We swap these values. We find that we have reached the end of the array. After one iteration, the array should look like this −</p>
+     <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/bubble_sort_8.jpg" alt="">
+     <p>To be precise, we are now showing how an array should look like after each iteration. After the second iteration, it should look like this −</p>
+     <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/bubble_sort_9.jpg" alt="">
+     <p>Notice that after each iteration, at least one value moves at the end.</p>
+
+     <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/bubble_sort_10.jpg" alt="">
+
+     <p>And when there's no swap required, bubble sorts learns that an array is completely sorted.</p>
+     
+     <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/bubble_sort_11.jpg" alt="">
+
+    </div>
+                 
+   <div class = "code">
+           
+    
+      <h1>Implementation in C</h1>
+         <pre class="prettyprint notranslate prettyprinted" style=""><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;stdio.h&gt;</span><span class="pln">
+        </span><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;stdbool.h&gt;</span><span class="pln">
+        
+        </span><span class="com">#define</span><span class="pln"> MAX </span><span class="lit">10</span><span class="pln">
+        
+        </span><span class="kwd">int</span><span class="pln"> list</span><span class="pun">[</span><span class="pln">MAX</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="lit">1</span><span class="pun">,</span><span class="lit">8</span><span class="pun">,</span><span class="lit">4</span><span class="pun">,</span><span class="lit">6</span><span class="pun">,</span><span class="lit">0</span><span class="pun">,</span><span class="lit">3</span><span class="pun">,</span><span class="lit">5</span><span class="pun">,</span><span class="lit">2</span><span class="pun">,</span><span class="lit">7</span><span class="pun">,</span><span class="lit">9</span><span class="pun">};</span><span class="pln">
+        
+        </span><span class="kwd">void</span><span class="pln"> display</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+           </span><span class="kwd">int</span><span class="pln"> i</span><span class="pun">;</span><span class="pln">
+           printf</span><span class="pun">(</span><span class="str">"["</span><span class="pun">);</span><span class="pln">
+          
+           </span><span class="com">// navigate through all items </span><span class="pln">
+           </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;</span><span class="pln"> MAX</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+              printf</span><span class="pun">(</span><span class="str">"%d "</span><span class="pun">,</span><span class="pln">list</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]);</span><span class="pln">
+           </span><span class="pun">}</span><span class="pln">
+          
+           printf</span><span class="pun">(</span><span class="str">"]\n"</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        
+        </span><span class="kwd">void</span><span class="pln"> bubbleSort</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+           </span><span class="kwd">int</span><span class="pln"> temp</span><span class="pun">;</span><span class="pln">
+           </span><span class="kwd">int</span><span class="pln"> i</span><span class="pun">,</span><span class="pln">j</span><span class="pun">;</span><span class="pln">
+          
+           </span><span class="kwd">bool</span><span class="pln"> swapped </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">;</span><span class="pln">
+           
+           </span><span class="com">// loop through all numbers </span><span class="pln">
+           </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;</span><span class="pln"> MAX</span><span class="pun">-</span><span class="lit">1</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> 
+              swapped </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">;</span><span class="pln">
+            
+              </span><span class="com">// loop through numbers falling ahead </span><span class="pln">
+              </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">j </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> j </span><span class="pun">&lt;</span><span class="pln"> MAX</span><span class="pun">-</span><span class="lit">1</span><span class="pun">-</span><span class="pln">i</span><span class="pun">;</span><span class="pln"> j</span><span class="pun">++)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                 printf</span><span class="pun">(</span><span class="str">"     Items compared: [ %d, %d ] "</span><span class="pun">,</span><span class="pln"> list</span><span class="pun">[</span><span class="pln">j</span><span class="pun">],</span><span class="pln">list</span><span class="pun">[</span><span class="pln">j</span><span class="pun">+</span><span class="lit">1</span><span class="pun">]);</span><span class="pln">
+        
+                 </span><span class="com">// check if next number is lesser than current no</span><span class="pln">
+                 </span><span class="com">//   swap the numbers. </span><span class="pln">
+                 </span><span class="com">//  (Bubble up the highest number)</span><span class="pln">
+              
+                 </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">list</span><span class="pun">[</span><span class="pln">j</span><span class="pun">]</span><span class="pln"> </span><span class="pun">&gt;</span><span class="pln"> list</span><span class="pun">[</span><span class="pln">j</span><span class="pun">+</span><span class="lit">1</span><span class="pun">])</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                    temp </span><span class="pun">=</span><span class="pln"> list</span><span class="pun">[</span><span class="pln">j</span><span class="pun">];</span><span class="pln">
+                    list</span><span class="pun">[</span><span class="pln">j</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> list</span><span class="pun">[</span><span class="pln">j</span><span class="pun">+</span><span class="lit">1</span><span class="pun">];</span><span class="pln">
+                    list</span><span class="pun">[</span><span class="pln">j</span><span class="pun">+</span><span class="lit">1</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> temp</span><span class="pun">;</span><span class="pln">
+        
+                    swapped </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">;</span><span class="pln">
+                    printf</span><span class="pun">(</span><span class="str">" =&gt; swapped [%d, %d]\n"</span><span class="pun">,</span><span class="pln">list</span><span class="pun">[</span><span class="pln">j</span><span class="pun">],</span><span class="pln">list</span><span class="pun">[</span><span class="pln">j</span><span class="pun">+</span><span class="lit">1</span><span class="pun">]);</span><span class="pln">
+                 </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                    printf</span><span class="pun">(</span><span class="str">" =&gt; not swapped\n"</span><span class="pun">);</span><span class="pln">
+                 </span><span class="pun">}</span><span class="pln">
+              
+              </span><span class="pun">}</span><span class="pln">
+        
+              </span><span class="com">// if no number was swapped that means </span><span class="pln">
+              </span><span class="com">//   array is sorted now, break the loop. </span><span class="pln">
+              </span><span class="kwd">if</span><span class="pun">(!</span><span class="pln">swapped</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                 </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+              </span><span class="pun">}</span><span class="pln">
+              
+              printf</span><span class="pun">(</span><span class="str">"Iteration %d#: "</span><span class="pun">,(</span><span class="pln">i</span><span class="pun">+</span><span class="lit">1</span><span class="pun">));</span><span class="pln"> 
+              display</span><span class="pun">();</span><span class="pln">
+           </span><span class="pun">}</span><span class="pln">
+          
+        </span><span class="pun">}</span><span class="pln">
+        
+        </span><span class="kwd">void</span><span class="pln"> main</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+           printf</span><span class="pun">(</span><span class="str">"Input Array: "</span><span class="pun">);</span><span class="pln">
+           display</span><span class="pun">();</span><span class="pln">
+           printf</span><span class="pun">(</span><span class="str">"\n"</span><span class="pun">);</span><span class="pln">
+          
+           bubbleSort</span><span class="pun">();</span><span class="pln">
+           printf</span><span class="pun">(</span><span class="str">"\nOutput Array: "</span><span class="pun">);</span><span class="pln">
+           display</span><span class="pun">();</span><span class="pln">
+        </span><span class="pun">}</span></pre>
+
+      
+       </div>
+
+
+
+   </div>
+        </div>
+    
+</div>
+    
+    
+
+</body>
+</html>
