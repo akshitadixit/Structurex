@@ -1,0 +1,45 @@
+/***** styling for the more button in the top *****/
+
+.dropdown {
+     position: relative;
+     display: inline-block;
+}
+/* set the size and position of more button */
+.Morebutton {
+     padding: 10px 30px;
+     font-size: 15px;
+}
+/* style for background of list items */
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC&display=swap');
+
+#list-items {
+    display: none;
+    position: absolute;
+    background-color: hsl(30, 33%, 5%);
+    min-width: 200px;
+}
+/* styling for list items */
+#list-items a {
+     display: block;
+     font-size: 18px;
+     font-family: 'Encode Sans SC', sans-serif;
+     background-color: #353839;
+     color: white;
+     text-decoration: none;
+     padding: 10px;
+}
+
+#list-items a:hover{
+     transition: 0.5s all ease-in-out;
+     font-size:21px;
+}
+
+.Morebutton:hover{
+          font-weight: bold;
+          transform: scale(1.2);
+          transition: 0.5s all ease-in-out;
+          font-size:16px;
+          margin-bottom: 8%;
+
+        }
+        

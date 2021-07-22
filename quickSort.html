@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- <title>Document</title> -->
+        <title>Merge Sort</title>
+        <link
+	      rel="stylesheet"
+	      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+	      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+	      crossorigin="anonymous"
+	    />
+	    <link
+	      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+	      rel="stylesheet"
+	    />
+        <link rel="stylesheet" href="src/home/css/style.css" />
+        <script src="https://use.fontawesome.com/7ade57373d.js"></script>
+        <!-- Page icon -->
+        <link rel="icon" href="./src/assets/logo.png">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+ 
+    </head>
+<body>
+    <header>
+        <div id="header-inner">
+          <a href="#" id="logo"></a>
+           <a class="navbar-brand1" rel="home" href="#" title="logo">
+            <img src="src/assets/logo.png" width="90" height="80" >
+          <div class="container1 blue circleBehind">
+              <a href="#" id="menu-icon"></a>
+              <a href="#" class="current">Home</a>
+              <a href="sort.html">Sorting</a>
+              <a href="search.html">Searching</a>
+              <a href="#">Path Finding</a>
+              <a href="#">Graph</a>
+          </div>
+      </div>
+
+      </header>
+
+
+      <div class="algo">
+         <br>
+         <br>
+    <h1>Quick Sort</h1>
+     <p>Quick sort is a highly efficient sorting algorithm and is based on partitioning of array of data into smaller arrays. A large array is partitioned into two arrays one of which holds values smaller than the specified value, say pivot, based on which the partition is made and another array holds values greater than the pivot value.
+<br>
+      Quicksort partitions an array and then calls itself recursively twice to sort the two resulting subarrays. This algorithm is quite efficient for large-sized data sets as its average and worst-case complexity are O(n2), respectively.</p>
+     <br>
+     <br>
+     <div class="box1">
+      <div class="Process">
+         <h1>Partition in Quick Sort</h1>
+          <p>Following animated representation explains how to find the pivot value in an array.</p>
+          <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/quick_sort_partition_animation.gif" alt="Quick Sort Partition Animation">
+          <p>The pivot value divides the list into two parts. And recursively, we find the pivot for each sub-lists until all lists contains only one element.</p>
+          
+        <div class ="algorithm">
+         <h3>Quick Sort Pivot Algorithm</h3>
+    <p>Based on our understanding of partitioning in quick sort, we will now try to write an algorithm for it, which is as follows.</p>
+    <p> 
+       <b>Step 1 −</b> Choose the highest index value has pivot <br>
+    <b>Step 2 −</b> Take two variables to point left and right of the list excluding pivot <br>
+    <b>Step 3 −</b> left points to the low index <br>
+    <b>Step 4 − </b>right points to the high <br>
+    <b>Step 5 − </b>while value at left is less than pivot move right <br>
+    <b>Step 6 −</b> while value at right is greater than pivot move left <br>
+    <b>Step 7 − </b>if both step 5 and step 6 does not match swap left and right <br>
+    <b>Step 8 −</b> if left ≥ right, the point where they met is new pivot <br>
+    </p>
+    
+    <h3>Quick Sort Algorithm</h3>
+    <p>Using pivot algorithm recursively, we end up with smaller possible partitions. Each partition is then processed for quick sort. We define recursive algorithm for quicksort as follows −</p>
+    <b>Step 1 −</b>  Make the right-most index value pivot <br>
+    <b>Step 2 −</b>partition the array using pivot value<br>
+    <b>Step 3 −</b> partition the array using pivot value <br>
+    <b>Step 4 − </b>quicksort right partition recursively <br>
+        </div>
+    
+    
+    
+        </div>
+
+        <div class = "code">  
+         <pre class="prettyprint notranslate prettyprinted" style=""><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;stdio.h&gt;</span><span class="pln">
+         </span><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;stdbool.h&gt;</span><span class="pln">
+         
+         </span><span class="com">#define</span><span class="pln"> MAX </span><span class="lit">7</span><span class="pln">
+         
+         </span><span class="kwd">int</span><span class="pln"> intArray</span><span class="pun">[</span><span class="pln">MAX</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="lit">4</span><span class="pun">,</span><span class="lit">6</span><span class="pun">,</span><span class="lit">3</span><span class="pun">,</span><span class="lit">2</span><span class="pun">,</span><span class="lit">1</span><span class="pun">,</span><span class="lit">9</span><span class="pun">,</span><span class="lit">7</span><span class="pun">};</span><span class="pln">
+         
+         </span><span class="kwd">void</span><span class="pln"> printline</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> count</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="kwd">int</span><span class="pln"> i</span><span class="pun">;</span><span class="pln">
+            
+            </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">i </span><span class="pun">&lt;</span><span class="pln"> count</span><span class="pun">-</span><span class="lit">1</span><span class="pun">;</span><span class="pln">i</span><span class="pun">++)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               printf</span><span class="pun">(</span><span class="str">"="</span><span class="pun">);</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+            
+            printf</span><span class="pun">(</span><span class="str">"=\n"</span><span class="pun">);</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln">
+         
+         </span><span class="kwd">void</span><span class="pln"> display</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="kwd">int</span><span class="pln"> i</span><span class="pun">;</span><span class="pln">
+            printf</span><span class="pun">(</span><span class="str">"["</span><span class="pun">);</span><span class="pln">
+            
+            </span><span class="com">// navigate through all items </span><span class="pln">
+            </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">i </span><span class="pun">&lt;</span><span class="pln"> MAX</span><span class="pun">;</span><span class="pln">i</span><span class="pun">++)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               printf</span><span class="pun">(</span><span class="str">"%d "</span><span class="pun">,</span><span class="pln">intArray</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]);</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+            
+            printf</span><span class="pun">(</span><span class="str">"]\n"</span><span class="pun">);</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln">
+         
+         </span><span class="kwd">void</span><span class="pln"> swap</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> num1</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> num2</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="kwd">int</span><span class="pln"> temp </span><span class="pun">=</span><span class="pln"> intArray</span><span class="pun">[</span><span class="pln">num1</span><span class="pun">];</span><span class="pln">
+            intArray</span><span class="pun">[</span><span class="pln">num1</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> intArray</span><span class="pun">[</span><span class="pln">num2</span><span class="pun">];</span><span class="pln">
+            intArray</span><span class="pun">[</span><span class="pln">num2</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> temp</span><span class="pun">;</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln">
+         
+         </span><span class="kwd">int</span><span class="pln"> partition</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> left</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> right</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> pivot</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="kwd">int</span><span class="pln"> leftPointer </span><span class="pun">=</span><span class="pln"> left </span><span class="pun">-</span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+            </span><span class="kwd">int</span><span class="pln"> rightPointer </span><span class="pun">=</span><span class="pln"> right</span><span class="pun">;</span><span class="pln">
+         
+            </span><span class="kwd">while</span><span class="pun">(</span><span class="kwd">true</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               </span><span class="kwd">while</span><span class="pun">(</span><span class="pln">intArray</span><span class="pun">[++</span><span class="pln">leftPointer</span><span class="pun">]</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln"> pivot</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                  </span><span class="com">//do nothing</span><span class="pln">
+               </span><span class="pun">}</span><span class="pln">
+               
+               </span><span class="kwd">while</span><span class="pun">(</span><span class="pln">rightPointer </span><span class="pun">&gt;</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> </span><span class="pun">&amp;&amp;</span><span class="pln"> intArray</span><span class="pun">[--</span><span class="pln">rightPointer</span><span class="pun">]</span><span class="pln"> </span><span class="pun">&gt;</span><span class="pln"> pivot</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                  </span><span class="com">//do nothing</span><span class="pln">
+               </span><span class="pun">}</span><span class="pln">
+         
+               </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">leftPointer </span><span class="pun">&gt;=</span><span class="pln"> rightPointer</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                  </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+               </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                  printf</span><span class="pun">(</span><span class="str">" item swapped :%d,%d\n"</span><span class="pun">,</span><span class="pln"> intArray</span><span class="pun">[</span><span class="pln">leftPointer</span><span class="pun">],</span><span class="pln">intArray</span><span class="pun">[</span><span class="pln">rightPointer</span><span class="pun">]);</span><span class="pln">
+                  swap</span><span class="pun">(</span><span class="pln">leftPointer</span><span class="pun">,</span><span class="pln">rightPointer</span><span class="pun">);</span><span class="pln">
+               </span><span class="pun">}</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+            
+            printf</span><span class="pun">(</span><span class="str">" pivot swapped :%d,%d\n"</span><span class="pun">,</span><span class="pln"> intArray</span><span class="pun">[</span><span class="pln">leftPointer</span><span class="pun">],</span><span class="pln">intArray</span><span class="pun">[</span><span class="pln">right</span><span class="pun">]);</span><span class="pln">
+            swap</span><span class="pun">(</span><span class="pln">leftPointer</span><span class="pun">,</span><span class="pln">right</span><span class="pun">);</span><span class="pln">
+            printf</span><span class="pun">(</span><span class="str">"Updated Array: "</span><span class="pun">);</span><span class="pln"> 
+            display</span><span class="pun">();</span><span class="pln">
+            </span><span class="kwd">return</span><span class="pln"> leftPointer</span><span class="pun">;</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln">
+         
+         </span><span class="kwd">void</span><span class="pln"> quickSort</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> left</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> right</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">right</span><span class="pun">-</span><span class="pln">left </span><span class="pun">&lt;=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               </span><span class="kwd">return</span><span class="pun">;</span><span class="pln">   
+            </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               </span><span class="kwd">int</span><span class="pln"> pivot </span><span class="pun">=</span><span class="pln"> intArray</span><span class="pun">[</span><span class="pln">right</span><span class="pun">];</span><span class="pln">
+               </span><span class="kwd">int</span><span class="pln"> partitionPoint </span><span class="pun">=</span><span class="pln"> partition</span><span class="pun">(</span><span class="pln">left</span><span class="pun">,</span><span class="pln"> right</span><span class="pun">,</span><span class="pln"> pivot</span><span class="pun">);</span><span class="pln">
+               quickSort</span><span class="pun">(</span><span class="pln">left</span><span class="pun">,</span><span class="pln">partitionPoint</span><span class="pun">-</span><span class="lit">1</span><span class="pun">);</span><span class="pln">
+               quickSort</span><span class="pun">(</span><span class="pln">partitionPoint</span><span class="pun">+</span><span class="lit">1</span><span class="pun">,</span><span class="pln">right</span><span class="pun">);</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">        
+         </span><span class="pun">}</span><span class="pln">
+         
+         </span><span class="kwd">int</span><span class="pln"> main</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            printf</span><span class="pun">(</span><span class="str">"Input Array: "</span><span class="pun">);</span><span class="pln">
+            display</span><span class="pun">();</span><span class="pln">
+            printline</span><span class="pun">(</span><span class="lit">50</span><span class="pun">);</span><span class="pln">
+            quickSort</span><span class="pun">(</span><span class="lit">0</span><span class="pun">,</span><span class="pln">MAX</span><span class="pun">-</span><span class="lit">1</span><span class="pun">);</span><span class="pln">
+            printf</span><span class="pun">(</span><span class="str">"Output Array: "</span><span class="pun">);</span><span class="pln">
+            display</span><span class="pun">();</span><span class="pln">
+            printline</span><span class="pun">(</span><span class="lit">50</span><span class="pun">);</span><span class="pln">
+         </span><span class="pun">}</span></pre>
+    </div>
+
+    
+                 
+</div>
+
+<p style=" margin-left: 50%;"> If we compile and run the above program, it will produce the following result −</p>
+<h2 style=" margin-left: 50%;">Output</h2>
+<div class="output">
+   <pre class="result notranslate">Input Array: [4 6 3 2 1 9 7 ]
+      ==================================================
+       pivot swapped :9,7
+      Updated Array: [4 6 3 2 1 7 9 ]
+       pivot swapped :4,1
+      Updated Array: [1 6 3 2 4 7 9 ]
+       item swapped :6,2
+       pivot swapped :6,4
+      Updated Array: [1 2 3 4 6 7 9 ]
+       pivot swapped :3,3
+      Updated Array: [1 2 3 4 6 7 9 ]
+      Output Array: [1 2 3 4 6 7 9 ]
+      ==================================================
+      </pre>
+
+
+   </div>
+        </div>
+    
+
+    
+    
+
+</body>
+</html>

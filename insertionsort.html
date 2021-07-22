@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- <title>Document</title> -->
+        <title>Insertion Sort</title>
+        <link
+	      rel="stylesheet"
+	      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+	      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+	      crossorigin="anonymous"
+	    />
+	    <link
+	      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+	      rel="stylesheet"
+	    />
+        <link rel="stylesheet" href="src/home/css/style.css" />
+        <script src="https://use.fontawesome.com/7ade57373d.js"></script>
+        <!-- Page icon -->
+        <link rel="icon" href="./src/assets/logo.png">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+ 
+    </head>
+<body>
+    <header>
+        <div id="header-inner">
+          <a href="#" id="logo"></a>
+           <a class="navbar-brand1" rel="home" href="#" title="logo">
+            <img src="src/assets/logo.png" width="90" height="80" >
+          <div class="container1 blue circleBehind">
+              <a href="#" id="menu-icon"></a>
+              <a href="#" class="current">Home</a>
+              <a href="sort.html">Sorting</a>
+              <a href="search.html">Searching</a>
+              <a href="#">Path Finding</a>
+              <a href="#">Graph</a>
+          </div>
+      </div>
+
+      </header>
+
+
+      <div class="algo">
+         <br>
+         <br>
+    <h1>Insertion Sort</h1>
+     <p>This is an in-place comparison-based sorting algorithm. Here, a sub-list is maintained which is always sorted. For example, the lower part of an array is maintained to be sorted. An element which is to be 'insert'ed in this sorted sub-list, has to find its appropriate place and then it has to be inserted there. Hence the name, insertion sort.
+       <br> The array is searched sequentially and unsorted items are moved and inserted into the sorted sub-list (in the same array). This algorithm is not suitable for large data sets as its average and worst case complexity are of Ο(n2), where n is the number of items.</p>
+     <br>
+     <div class="box1">
+     <div class="Process">
+     <h1>How Insertion Sort Works?</h1>
+      <p>We take an unsorted array for our example. </p>
+      <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/unsorted_array.jpg">
+      <br>
+      <p>Insertion sort compares the first two elements.</p>
+      <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/insertion_sort_1.jpg" alt="">
+      <br>
+     <p>It finds that both 14 and 33 are already in ascending order. For now, 14 is in sorted sub-list.</p>
+     <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/insertion_sort_2.jpg" alt="">
+     <br>
+     <p>Insertion sort moves ahead and compares 33 with 27.    </p>
+     <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/insertion_sort_3.jpg" alt="">
+     <br>
+     <p>And finds that 33 is not in the correct position.    </p>
+     <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/insertion_sort_4.jpg" alt="">
+     <br>
+     <p>It swaps 33 with 27. It also checks with all the elements of sorted sub-list. Here we see that the sorted sub-list has only one element 14, and 27 is greater than 14. Hence, the sorted sub-list remains sorted after swapping.</p>
+     <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/insertion_sort_5.jpg" alt="">
+     <br>
+     <p>By now we have 14 and 27 in the sorted sub-list. Next, it compares 33 with 10.</p>
+     <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/insertion_sort_6.jpg" alt="">
+     <br>
+    <p>These values are not in a sorted order.</p>
+     <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/insertion_sort_7.jpg" alt="">
+     <br>
+     <p>So we swap them.</p>
+     <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/insertion_sort_8.jpg" alt="">
+     <br>
+     <p>However, swapping makes 27 and 10 unsorted.</p>
+     <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/insertion_sort_9.jpg" alt="">
+     <br>
+
+     <p>Hence, we swap them too </p>
+     
+     <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/insertion_sort_10.jpg" alt="">
+     <br>
+     <p>Again we find 14 and 10 in an unsorted order.</p>
+      <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/insertion_sort_11.jpg" alt="">
+      <br>
+     <p>We swap them again. By the end of third iteration, we have a sorted sub-list of 4 items.</p>
+    <img src="https://www.tutorialspoint.com/data_structures_algorithms/images/insertion_sort_12.jpg" alt="">
+    <br>
+    <p>This process goes on until all the unsorted values are covered in a sorted sub-list. Now we shall see some programming aspects of insertion sort.</p>
+     <br>    
+</div>
+                 
+   <div class = "code">
+           
+    
+      
+    <pre class="prettyprint notranslate prettyprinted" style=""><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;stdio.h&gt;</span><span class="pln">
+    </span><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;stdbool.h&gt;</span><span class="pln">
+    
+    </span><span class="com">#define</span><span class="pln"> MAX </span><span class="lit">7</span><span class="pln">
+    
+    </span><span class="kwd">int</span><span class="pln"> intArray</span><span class="pun">[</span><span class="pln">MAX</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="lit">4</span><span class="pun">,</span><span class="lit">6</span><span class="pun">,</span><span class="lit">3</span><span class="pun">,</span><span class="lit">2</span><span class="pun">,</span><span class="lit">1</span><span class="pun">,</span><span class="lit">9</span><span class="pun">,</span><span class="lit">7</span><span class="pun">};</span><span class="pln">
+    
+    </span><span class="kwd">void</span><span class="pln"> printline</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> count</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+       </span><span class="kwd">int</span><span class="pln"> i</span><span class="pun">;</span><span class="pln">
+        
+       </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">i </span><span class="pun">&lt;</span><span class="pln"> count</span><span class="pun">-</span><span class="lit">1</span><span class="pun">;</span><span class="pln">i</span><span class="pun">++)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+          printf</span><span class="pun">(</span><span class="str">"="</span><span class="pun">);</span><span class="pln">
+       </span><span class="pun">}</span><span class="pln">
+        
+       printf</span><span class="pun">(</span><span class="str">"=\n"</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    
+    </span><span class="kwd">void</span><span class="pln"> display</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+       </span><span class="kwd">int</span><span class="pln"> i</span><span class="pun">;</span><span class="pln">
+       printf</span><span class="pun">(</span><span class="str">"["</span><span class="pun">);</span><span class="pln">
+        
+       </span><span class="com">// navigate through all items </span><span class="pln">
+       </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">i </span><span class="pun">&lt;</span><span class="pln"> MAX</span><span class="pun">;</span><span class="pln">i</span><span class="pun">++)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+          printf</span><span class="pun">(</span><span class="str">"%d "</span><span class="pun">,</span><span class="pln">intArray</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]);</span><span class="pln">
+       </span><span class="pun">}</span><span class="pln">
+        
+       printf</span><span class="pun">(</span><span class="str">"]\n"</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    
+    </span><span class="kwd">void</span><span class="pln"> insertionSort</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    
+       </span><span class="kwd">int</span><span class="pln"> valueToInsert</span><span class="pun">;</span><span class="pln">
+       </span><span class="kwd">int</span><span class="pln"> holePosition</span><span class="pun">;</span><span class="pln">
+       </span><span class="kwd">int</span><span class="pln"> i</span><span class="pun">;</span><span class="pln">
+      
+       </span><span class="com">// loop through all numbers </span><span class="pln">
+       </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;</span><span class="pln"> MAX</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> 
+        
+          </span><span class="com">// select a value to be inserted. </span><span class="pln">
+          valueToInsert </span><span class="pun">=</span><span class="pln"> intArray</span><span class="pun">[</span><span class="pln">i</span><span class="pun">];</span><span class="pln">
+            
+          </span><span class="com">// select the hole position where number is to be inserted </span><span class="pln">
+          holePosition </span><span class="pun">=</span><span class="pln"> i</span><span class="pun">;</span><span class="pln">
+            
+          </span><span class="com">// check if previous no. is larger than value to be inserted </span><span class="pln">
+          </span><span class="kwd">while</span><span class="pln"> </span><span class="pun">(</span><span class="pln">holePosition </span><span class="pun">&gt;</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> </span><span class="pun">&amp;&amp;</span><span class="pln"> intArray</span><span class="pun">[</span><span class="pln">holePosition</span><span class="pun">-</span><span class="lit">1</span><span class="pun">]</span><span class="pln"> </span><span class="pun">&gt;</span><span class="pln"> valueToInsert</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+             intArray</span><span class="pun">[</span><span class="pln">holePosition</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> intArray</span><span class="pun">[</span><span class="pln">holePosition</span><span class="pun">-</span><span class="lit">1</span><span class="pun">];</span><span class="pln">
+             holePosition</span><span class="pun">--;</span><span class="pln">
+             printf</span><span class="pun">(</span><span class="str">" item moved : %d\n"</span><span class="pln"> </span><span class="pun">,</span><span class="pln"> intArray</span><span class="pun">[</span><span class="pln">holePosition</span><span class="pun">]);</span><span class="pln">
+          </span><span class="pun">}</span><span class="pln">
+    
+          </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">holePosition </span><span class="pun">!=</span><span class="pln"> i</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+             printf</span><span class="pun">(</span><span class="str">" item inserted : %d, at position : %d\n"</span><span class="pln"> </span><span class="pun">,</span><span class="pln"> valueToInsert</span><span class="pun">,</span><span class="pln">holePosition</span><span class="pun">);</span><span class="pln">
+             </span><span class="com">// insert the number at hole position </span><span class="pln">
+             intArray</span><span class="pun">[</span><span class="pln">holePosition</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> valueToInsert</span><span class="pun">;</span><span class="pln">
+          </span><span class="pun">}</span><span class="pln">
+    
+          printf</span><span class="pun">(</span><span class="str">"Iteration %d#:"</span><span class="pun">,</span><span class="pln">i</span><span class="pun">);</span><span class="pln">
+          display</span><span class="pun">();</span><span class="pln">
+            
+       </span><span class="pun">}</span><span class="pln">  
+    </span><span class="pun">}</span><span class="pln">
+    
+    </span><span class="kwd">void</span><span class="pln"> main</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+       printf</span><span class="pun">(</span><span class="str">"Input Array: "</span><span class="pun">);</span><span class="pln">
+       display</span><span class="pun">();</span><span class="pln">
+       printline</span><span class="pun">(</span><span class="lit">50</span><span class="pun">);</span><span class="pln">
+       insertionSort</span><span class="pun">();</span><span class="pln">
+       printf</span><span class="pun">(</span><span class="str">"Output Array: "</span><span class="pun">);</span><span class="pln">
+       display</span><span class="pun">();</span><span class="pln">
+       printline</span><span class="pun">(</span><span class="lit">50</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span></pre>
+
+      
+       </div>
+
+
+
+   </div>
+        </div>
+    
+
+    
+    
+
+</body>
+</html>
