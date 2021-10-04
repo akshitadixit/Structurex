@@ -36,10 +36,9 @@
 
 .Morebutton:hover{
           font-weight: bold;
-          transform: scale(1.2);
           transition: 0.5s all ease-in-out;
           font-size:16px;
-          margin-bottom: 8%;
+          
 
         }
         

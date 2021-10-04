@@ -48,4 +48,11 @@ function ajax(method, url, data, success, error) {
   };
   xhr.send(data);
 }
-
+function display(){
+  var x = document.getElementById("heck");
+  if (x.className === "heck") {
+    x.className += " res";
+  } else {
+    x.className = "heck";
+  }
+}

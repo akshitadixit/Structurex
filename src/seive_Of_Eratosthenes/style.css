@@ -3,9 +3,7 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
-.dropdown{
-  padding-left: 10%;
-}
+
 /*navbar1*/
 @import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC&display=swap');
 
@@ -164,4 +162,9 @@ button {
 #texty {
   margin: 20px;
   padding-left: 10px;
+}
+@media screen and (max-width:918px){
+  .main-content{
+    flex-wrap: wrap;
+  }
 }
