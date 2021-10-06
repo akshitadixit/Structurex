@@ -8,46 +8,53 @@
         
 
                <!-- Page icon -->
-               <link rel="icon" href="./src/assets/favicon.png">
+        <link rel="icon" href="./src/assets/favicon.png">
 		<!-- style for the top more button -->
 		<link rel="stylesheet" href="src/home/css/morebutton.css" />
-
+        <link rel="stylesheet" href="src/seive_Of_Eratosthenes/style.css" />
 		<!-- style for the top more button -->
 		<link rel="stylesheet" href="src/home/css/morebutton.css" />
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   
-        </style>
+        
     </head>
     <body>
         <header>
             <div id="header-inner">
-
-                 <a class="navbar-brand" rel="home" href="#" title="Structurex">
-                        <img src="src/assets/nlogo.png" >
-                        <href="#" class="name">Structurex</a>
-                <div class="container blue ">
-                    <ul class="heck">
-                    
-                    <a href="index.html" class="link">Home</a>
-                    <a href="sort.html" class="link">Sorting</a>
-                    <a href="#" class="link">Searching</a>
-                    <a href="#" class="link">Path Finding</a>
-                    <a href="#" class="link">Graph</a>
-                    </ul>
-                    <div class="dropdown">
-                        <button onclick="show_hide()" class="Morebutton" > MORE </button>
-                        <center>
-                          <div id="list-items">
-                            <!-- Add more list items here if required -->
-                            <a href="seiveErato.html" target="_blank">Sieve Of Eratosthenes</a>
-                  
-                          </div>
-                        </center>
+              <a href="#" id="logo"></a>
+               <a class="navbar-brand1" rel="home" href="#" title="Structurex">
+                      <img src="src/assets/nlogo.png"  class="main-logo">
+                      
+                      <href="#" class="name">Structurex</a>
+                                  
+              <div class="container1 blue" id="navbarNav">
+                  <!-- ------HAMBURGER MENU -------->
+              
+                <!-- -----------NEW CHANGES----------- -->
+                <i class="fas fa-2x fa-bars" style="color:white;display: none;" onclick="display();"></i>
+                  <ul class="heck" id="heck"> 
+                  <a href="index.html" class="link">Home</a>
+                  <a href="sort.html"  class="link">Sorting</a>
+                  <a href="search.html"  class="link">Searching</a>
+                  <a href="./Path Finding/index.html" class="link">Path Finding</a>
+                  <a href="tree.html" class="link"  class="link">Graph</a>
+                  <div class="dropdown">
+                    <button onclick="show_hide()" class="Morebutton" > MORE</button>
+                    <center>
+                      <div id="list-items">
+                        <!-- Add more list items here if required -->
+                        <a href="seiveErato.html" >Sieve Of Eratosthenes</a>
+              
                       </div>
-                </div>
+                    </center>
+                  </div>
+                  </ul>
+                  
+                  
             </div>
-        </header>
-
+          </div>
+         
+          </header>
         <section>
             <div id="array_container"></div>
         </section>
@@ -65,6 +72,7 @@
         </section>
 
         <script src="src/search/js/index.js"></script>
+        <script src="src/home/js/script.js"></script>  
         <script src="src/search/js/linearSearch.js"></script>
         <script src="src/search/js/binarySearch.js"></script>
 		<script src="src/home/js/morebutton.js"></script>
