@@ -8,6 +8,9 @@
          <link rel="icon" href="./src/assets/favicon.png">
         <link rel="stylesheet" href="src/sort/css/style.css" />
 		<link rel="stylesheet" href="src/home/css/morebutton.css" />
+        <link rel="stylesheet" href="src/home/css/style.css" />
+        <script src="https://use.fontawesome.com/7ade57373d.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     </head>
     <body>
         <header>
@@ -22,10 +25,10 @@
 
                     <ul class="heck">
                     <a href="index.html" class="link">Home</a>
-                    <a href="#" class="link">Sorting</a>
+                    <a href="sort.html" class="link">Sorting</a>
                     <a href="search.html" target="_blank" class="link">Searching</a>
-                    <a href="#" class="link">Path Finding</a>
-                    <a href="#" class="link">Graph</a>
+                    <a href="./Path Finding/index.html" target="_blank" class="link">Path Finding</a>
+                    <a href="tree.html" class="link" target="_blank">Graph</a>
                     </ul>
                     <div class="dropdown">
                         <button onclick="show_hide()" class="Morebutton" > MORE </button>
@@ -75,6 +78,64 @@
                 </select>
             </div>
         </section>
+
+
+        <!-- Footer -->
+<footer>
+    <div class="main-content">
+        <div class="left box">
+            <h2>About Us</h2>
+            <div class="content">
+                <p>Structurex is an online platform that visualizes algorithms,
+                     making Data Structure and Algorithm <br>more easy to learn and understand.
+                     
+                </p>
+
+                <div class="links">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-medium-m"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="address box">
+            <h2>Address</h2>
+            <div class="content">
+                <div class="place">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span class="text">Kanpur,Uttar Pradesh</span>
+                </div>
+                <div class="email">
+                    <i class="fas fa-envelope"></i>
+                    <span class="email">akshitadixit.int@gmail.com</span>
+                </div>
+            </div>
+        </div>
+        <div class="right box">
+            <h2>Contact Us</h2>
+            <form action="#">
+                <div class="email">
+                    <div class="text">Email</div>
+                    <input type="email" required>
+                </div>
+                <div class="msg">
+                    <div class="text">Message</div>
+                    <textarea name="" id="" cols="25" rows="2" required></textarea>
+                </div>
+                <div class="btn">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="footer-bottom">
+    <center>
+        <h4 class="credits">&copy; AkshitaDixit 2021. All Rights Reserved.</h4>
+    </center>
+</div>
+</footer>
    
         <script src="src/sort/js/index.js"></script>
         <script src="src/sort/js/heapSort.js"></script>
