@@ -163,8 +163,49 @@ button {
   margin: 20px;
   padding-left: 10px;
 }
+.heck.res{
+  display: block;
+}
 @media screen and (max-width:918px){
   .main-content{
     flex-wrap: wrap;
   }
+}
+@media screen and (max-width:1209px){
+  .heck{
+    display: none;
+  }
+  .fa-bars{
+    display: block !important;
+    position: absolute;
+    right:40px;
+    top:20px;
+  }
+  img.main-logo{
+    margin-left: 10px;
+    margin-top: 10px;
+    height:50px;
+    width:50px;
+  }
+  .heck .link{
+    text-align: left;
+  }
+  .heck{
+    margin-top:50px ;
+    padding-left:0px;
+  }
+  
+.heck .link{
+  display: block;
+  margin-top: 10px;
+  margin-left: 0px;
+}
+.name{
+  font-size: 18px;
+  margin-top: 6px;
+}
+.name:hover{
+  transform: scale(1);
+}
+
 }

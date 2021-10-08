@@ -77,3 +77,11 @@ function sieveEratos() {
 	}
 }
 
+function display(){
+    var x = document.getElementById("heck");
+    if (x.className === "heck") {
+      x.className += " res";
+    } else {
+      x.className = "heck";
+    }
+  }
